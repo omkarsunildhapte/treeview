@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Syncfusion links  -->
+  <link href="https://cdn.syncfusion.com/ej2/22.1.39/ej2-navigations/styles/material.css" rel="stylesheet"
+    type="text/css" />
+
+  <link href="https://cdn.syncfusion.com/ej2/22.1.39/ej2-base/styles/material.css" rel="stylesheet" type="text/css" />
+
+  <link href="https://cdn.syncfusion.com/ej2/22.1.39/ej2-inputs/styles/material.css" rel="stylesheet" type="text/css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
+
+  <script src="https://cdn.syncfusion.com/ej2/22.1.39/dist/ej2.min.js" type="text/javascript"></script>
+
+  <script src="https://cdn.syncfusion.com/ej2/22.1.39/ej2-base/dist/global/ej2-base.min.js"
+    type="text/javascript"></script>
+
+  <script src="http://cdn.syncfusion.com/ej2/22.1.39/ej2-navigations/dist/global/ej2-navigations.min.js"
+    type="text/javascript"></script>
+
+  <script src="https://cdn.syncfusion.com/ej2/syncfusion-helper.js" type="text/javascript"></script>
+
+  <!-----bootstrap.min.js------->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <!-----popper.min.js  ------->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="../js/treeview.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/jobDiv.css">
+</head>
+
+<body>
+  <div class="row justify-content-end mb-3 mt-2 me-1" id="entityIdentifierIndex">
+    <!--====>BARCODE CAMERA BUTTON<=====-->
+    <div class="col-auto d-flex d-none justify-content-center me-2">
+      <div class="col-2 d-flex align-items-center" id="barcodeCameraBtn">
+        <button type="button" class="btn bg-gradient-info btn-xs mb-0 p-1 px-3">
+          <i class="fa fa-barcode fs-3"></i>
+        </button>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-auto">
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa fa-square project"></i>
+                </div>
+                <div class="col-auto">
+                  <p class="m-0">Projects</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa fa-square job"></i>
+                </div>
+                <div class="col-auto">
+                  <p class="m-0">Jobs</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa fa-square operation"></i>
+                </div>
+                <div class="col-auto">
+                  <p class="m-0">Operations</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa fa-square task"></i>
+                </div>
+                <div class="col-auto">
+                  <p class="m-0">Tasks</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <input type="checkbox" class="checkboxDarkLight" id="checkboxDarkLight" />
+              <label for="checkboxDarkLight" class="checkboxDarkLight-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-moon-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                  class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                </svg>
+                <span class="ball"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fuild p-4 view" id="ProjectsComponent">
+    <div class="row">
+      <div class="card col">
+        <div class="card-body row">
+          <div class="col-12 row w-100">
+            <div class="col-12 row w-100">
+              <div
+                class="col-2 text-uppercase text-secondary text-sm font-weight-bolder ps-5 align-items-center text-start py-3">
+                Id
+              </div>
+              <div
+                class="col-5 text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
+                Name
+              </div>
+              <div
+                class="col-3 text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
+                Created Date
+              </div>
+              <div
+                class="col-2 text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
+                Status
+              </div>
+            </div>
+          </div>
+          <div class="border-bottom w-100"></div>
+          <div class="accordion col-12" id="accordionProjects"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- popup UI -->
+  <div id="operationsDiv" class="overlay z-index-3 d-none">
+    <div class="overlay-inner container p-3">
+      <div class="h-100">
+        <div class="w-100 d-flex flex-column justify-content-start">
+          <div class="col d-flex flex-row justify-content-between">
+            <div class="rowPop w-100">
+              <p class="font-weight-bolder col">Job Details</p>
+            </div>
+            <div class="titlebar-button" id="titlebar-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ea0606" class="bi bi-x-circle-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-100 d-flex flex-column justify-content-start">
+          <div class="w-100 rowPop">
+            <div class="col-4 overflow-hidden">
+              <div class="w-100">
+                <p class="font-weight-bolder">Operations</p>
+              </div>
+              <div class="operationStatusContainer" id="JobPanel"></div>
+            </div>
+            <div class="col-8 ps-2 rightSideDetailsContainer">
+              <!--JOB DATA UI-->
+              <div class="rowPop">
+                <div class="col-12">
+                  <div class="rowPop">
+                    <div class="col-3">
+                      <p class="text-sm font-weight-normalBold">
+                        Job Number:
+                      </p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-light JobData">*****</p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-normalBold">
+                        Part Number:
+                      </p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-light JobData">*****</p>
+                    </div>
+                  </div>
+                  <div class="rowPop">
+                    <div class="col-3">
+                      <p class="text-sm font-weight-normalBold">Customer:</p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-light JobData">*****</p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-normalBold">
+                        Drawing Number:
+                      </p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-light JobData">*****</p>
+                    </div>
+                  </div>
+                  <div class="rowPop">
+                    <div class="col-3">
+                      <p class="text-sm font-weight-normalBold">Quantity:</p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-light JobData">*****</p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-normalBold">
+                        Current Status:
+                      </p>
+                    </div>
+                    <div class="col-3">
+                      <p class="text-sm font-weight-light JobData">*****</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--OPERATION DATA UI-->
+              <div class="d-none" id="operationDetailsDiv">
+                <div class="rowPop pb-2">
+                  <div class="accordion-container" id="accordionOperationButton">
+                    <div class="accordion-label text-secondary-ob font-weight-bolder" id="operationName">
+                      ****
+                    </div>
+                    <div class="save-button-container">
+                      <div class="col-auto ms-auto me-2 text-secondary-ob ps-3">
+                        <span class="text-sm font-weight-light operationTimerData" id="operationTimerData">
+                          00:00:00
+                        </span>
+                      </div>
+                      <div class="col-auto ms-auto me-2" id="operationStartButtonContainer">
+                        <button type="button" class="btn bg-gradient-success d-flex gap-2 text-xs"
+                          id="operationStatusStartButtons">
+                          <i class="fa fa-play"></i>
+                          <span>Start</span>
+                        </button>
+                      </div>
+                      <div class="col-auto d-none ms-auto me-2" id="operationPauseResumeButtonContainer">
+                        <button type="button" class="btn bg-gradient-warning d-flex gap-2 text-xs"
+                          id="operationStatusPauseResumeButtons">
+                          <i class="fa fa-pause" id="faPause"></i>
+                          <i class="fa fa-play d-none" id="faPlay"></i>
+                          <span>Pause</span>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button type="button" class="btn bg-gradient-danger d-flex gap-2 text-xs"
+                          id="operationEndButtons">
+                          <i class="fa fa-stop"></i>
+                          <span>End</span>
+                        </button>
+                      </div>
+                      <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!--OPERATION DATA READ ONLY UI-->
+                <div class="rowPop d-none" id="operationDetailsDataDiv">
+                  <div class="col-12 py-2">
+                    <div class="rowPop">
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">ID:</p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-light operationDetailsData">
+                          *****
+                        </p>
+                      </div>
+                    </div>
+                    <div class="rowPop">
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold t">
+                          Quantity Completed:
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-light operationDetailsData">
+                          *****
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">
+                          Quantity Rejected:
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-light operationDetailsData">
+                          *****
+                        </p>
+                      </div>
+                    </div>
+                    <div class="rowPop">
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">Machine:</p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-light operationDetailsData">
+                          *****
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">
+                          Machine Technology:
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-light operationDetailsData">
+                          *****
+                        </p>
+                      </div>
+                    </div>
+                    <div class="rowPop">
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">
+                          Allocated Stock ID:
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-light operationDetailsData">
+                          *****
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">
+                          Allocated Stock Quantity:
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-light operationDetailsData">
+                          *****
+                        </p>
+                      </div>
+                    </div>
+                    <div class="rowPop stockRecoveryDiv d-none" id="stockRecoveryDiv">
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">
+                          Hopper Recovery:
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <div class="rowPop">
+                          <div class="col-md-6">
+                            <input type="number" class="form-control" id="hopperRecoveryInput" min="0" max="100"
+                              placeholder="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <p class="text-sm font-weight-normalBold">
+                          Build Recovery:
+                        </p>
+                      </div>
+                      <div class="col-3">
+                        <div class="rowPop">
+                          <div class="col-md-6">
+                            <input type="number" class="form-control" id="buildRecoveryInput" min="0" max="100"
+                              placeholder="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--OBSERVATION DATA UI-->
+                <div class="row-cols-sm-auto">
+                  <div class="accordion-container" id="accordionObservationsButton">
+                    <div class="accordion-label font-weight-bolder text-secondary-ob">
+                      Observations
+                    </div>
+                    <div class="save-button-container">
+                      <button type="button" class="btn-plus bg-gradient-blue text-xs d-none py-2 px-2"
+                        id="observationsDetailSave">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#54a5f5"
+                          class="bi bi-floppy2-fill" viewBox="0 0 16 16">
+                          <path d="M12 2h-2v3h2V2Z" />
+                          <path
+                            d="M1.5 0A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5V2.914a1.5 1.5 0 0 0-.44-1.06L14.147.439A1.5 1.5 0 0 0 13.086 0H1.5ZM4 6a1 1 0 0 1-1-1V1h10v4a1 1 0 0 1-1 1H4ZM3 9h10a1 1 0 0 1 1 1v5H2v-5a1 1 0 0 1 1-1Z" />
+                        </svg>
+                      </button>
+                      <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="observations-box py-2 d-none" id="observationsDataDiv">
+                  <div class="rowPop">
+                    <div class="col-md-6 pe-2">
+                      <label class="font-weight-bold text-secondary-ob text-sm" for="nameInput">Name</label>
+                      <input type="text" class="form-control" id="observationNameInput" placeholder="Name" />
+                    </div>
+                    <div class="col-md-6 pe-2">
+                      <label class="font-weight-bold text-secondary-ob text-sm" for="numberInput">Sample Number</label>
+                      <input type="text" class="form-control" id="observationNumberInput" placeholder="Sample Number" />
+                    </div>
+                  </div>
+                  <div class="rowPop">
+                    <div class="col-md-12 pe-2 align-items-center">
+                      <label class="font-weight-bold text-secondary-ob text-sm" for="messageTextarea">Note</label>
+                      <textarea name="notes" id="observationNotesInput" class="form-control" rows="2"
+                        placeholder="Notes"></textarea>
+                    </div>
+
+                    <!--Digital Assets DATA UI-->
+                    <div class="row-cols-sm-auto">
+                      <button type="button" class="btn-plus bg-gradient-blue" id="digitalAddFolderButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100">
+                          <line x1="50" y1="10" x2="50" y2="90" stroke="black" stroke-width="25" />
+                          <line x1="10" y1="50" x2="90" y2="50" stroke="black" stroke-width="25" />
+                          <g fill="none" stroke="#54a5f5" stroke-width="20">
+                            <line x1="50" y1="10" x2="50" y2="90" />
+                            <line x1="10" y1="50" x2="90" y2="50" />
+                          </g>
+                        </svg>
+                      </button>
+                      <div class="rowPop digitalAddUrlContainer d-none">
+                        <div class="col-md-6">
+                          <input type="text" class="form-control" id="observationUrlInput" placeholder="url" />
+                        </div>
+                        <div class="col-md-6">
+                          <button type="button" class="btn-plus bg-gradient-blue" id="digitalAddUrlButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100">
+                              <line x1="50" y1="10" x2="50" y2="90" stroke="black" stroke-width="25" />
+                              <line x1="10" y1="50" x2="90" y2="50" stroke="black" stroke-width="25" />
+                              <g fill="none" stroke="#54a5f5" stroke-width="20">
+                                <line x1="50" y1="10" x2="50" y2="90" />
+                                <line x1="10" y1="50" x2="90" y2="50" />
+                              </g>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div id="col-md-9 align-items-center">
+                        <div class="font-weight-bolder text-secondary" id="tree">
+                          <ul class="contextmenu" id="contextmenu"></ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--====>BARCODE CAMERA<=====-->
+  <div class="d-none overlay d-flex z-index-3 justify-content-center align-items-center" id="barcodeCameraDiv">
+    <div class="overlay-inner container p-3">
+      <div class="row">
+        <div class="col-auto">
+          <div class="dropdown">
+            <button class="btn bg-gradient-info" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Select Camera
+              <span><i class="fa fa-chevron-down ms-2"></i></span>
+            </button>
+            <ul class="dropdown-menu" id="barcodeCameraList"></ul>
+          </div>
+        </div>
+        <div class="col-auto ms-auto">
+          <!--<div class="fa fa-times fs-1 cursor-pointer" onclick="closeCamera()"></div>-->
+          <div class="barcodeClose-button cursor-pointer" id="barcodeClose">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ea0606" class="bi bi-x-circle-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center align-items-center mt-2">
+        <video class="object-fit-contain" autoplay id="barcodeCamera"></video>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

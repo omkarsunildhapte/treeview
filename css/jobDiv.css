@@ -1,0 +1,180 @@
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.1);
+    border-radius: 2px;
+}
+
+
+.rightSideDetailsContainer {
+    width: 65%;
+    height: 82vh;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    font-size: 0;
+}
+
+
+.observations-box {
+    margin-bottom: 10px;
+    color: var(--bs-observations-box-color);
+    background-color: var(--bs-observations-box-bg);
+}
+
+.operationStatusContainer {
+    width: 100%;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    font-size: 0;
+}
+
+.operationStatusItem {
+    width: 100%;
+    padding-top: 35%;
+    position: relative;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin: 0;
+    transition: all 0.1s linear;
+}
+
+.operationStatusItem:hover {
+    transform: scale(102%);
+}
+
+.operationStatusInner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 0.7rem;
+}
+
+.operationStatusLeftPart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.operationStatusRightPart {
+    width: 100%;
+    height: 100%;
+    color: var(--bs-body-color);
+}
+
+
+.operationStatusRightPart>.operationStatusRightPartText:nth-child(1) {
+    margin-bottom: 0.1rem;
+}
+
+.operationStatusCircle {
+    width: 45%;
+    padding-top: 45%;
+    position: relative;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.operationStatusBarOuter {
+    width: 6%;
+    height: 100%;
+    position: relative;
+}
+
+.operationStatusBar {
+    width: 100%;
+    height: 105%;
+    position: absolute;
+    top: -5%;
+}
+
+.operationsStatusCircleText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.operationStatusRightPartText {
+    width: 100%;
+    display: flex;
+}
+
+.operationStatusRightPartText>p:nth-child(2) {
+    margin-left: 1rem;
+}
+
+/*accordian */
+.accordion-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    width: 100%;
+    padding: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.accordion-label {
+    color: #444;
+    font-size: 15px;
+}
+
+.accordion.active {
+    background-color: #ccc;
+}
+
+
+/* Define the rotation transition for the accordion icon */
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Apply a 360-degree rotation when the accordion is open */
+.accordion-open .accordion-icon {
+    transform: rotate(360deg);
+}
+
+.accordion-icon {
+    width: 30px;
+    height: 30px;
+    fill: #000;
+    transform-origin: center;
+    transition: transform 0.2s;
+}
+
+.save-button-container {
+    display: flex;
+    align-items: center;
+}
+
+.operationTimerData {
+    display: flex;
+    align-items: center;
+}
+
+.accordion.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.save-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}

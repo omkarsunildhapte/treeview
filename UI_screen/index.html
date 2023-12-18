@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <!-- Google Fonts (Verdana) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Verdana&display=swap">
+
+    <!-- Your other stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/jobDiv.css">
+    <link rel="stylesheet" href="../css/soft-ui-dashboard.css">
+    <script src="../js/treeview.js"></script>
+
+    <link href="https://cdn.syncfusion.com/ej2/22.1.39/ej2-navigations/styles/material.css" rel="stylesheet"
+        type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</head>
+
+
+<body style="overflow: scroll; height: 100%;">
+    <div class="row justify-content-end mb-3 mt-2 me-1" id="entityIdentifierIndex">
+        <div class="col-auto d-flex d-none justify-content-center me-2">
+            <div class="col-2 d-flex align-items-center" id="barcodeCameraBtn">
+                <button type="button" class="btn bg-gradient-info btn-xs mb-0 p-1 px-3">
+                    <i class="fa fa-barcode fs-3"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-auto col-sm-6 mb-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <i class="fa fa-square project"></i>
+                                </div>
+                                <div class="col-auto">
+                                    <p class="m-0">Projects</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-auto col-sm-6 mb-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <i class="fa fa-square job"></i>
+                                </div>
+                                <div class="col-auto">
+                                    <p class="m-0">Jobs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-auto col-sm-6 mb-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <i class="fa fa-square operation"></i>
+                                </div>
+                                <div class="col-auto">
+                                    <p class="m-0">Operations</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-auto col-sm-6 mb-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <i class="fa fa-square task"></i>
+                                </div>
+                                <div class="col-auto">
+                                    <p class="m-0">Tasks</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-auto col-sm-6 mb-3">
+                            <input type="checkbox" class="checkboxDarkLight" id="checkboxDarkLight" />
+                            <label for="checkboxDarkLight" class="checkboxDarkLight-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                    class="bi bi-moon-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                                    class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                </svg>
+                                <span class="ball"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fuild p-4 view" id="ProjectsComponent">
+        <div class="row">
+            <div class="card col" style="overflow-x:auto;">
+                <div class="card-body">
+                    <div class="table-responsive" style="overflow-x:auto;">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th
+                                        class="text-uppercase text-secondary text-sm font-weight-bolder ps-3 ps-md-5 align-items-center text-start py-3">
+                                        Id</th>
+                                    <th
+                                        class="text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
+                                        Name</th>
+                                    <th
+                                        class="text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
+                                        Created Date</th>
+                                    <th
+                                        class="text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
+                                        Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <nav class="mt-4 d-flex justify-content-center align-items-center">
+                        <ul class="pagination" id="paginationProjects"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fuild">
+        <div class="card">
+            <div class="card-title d-flex justify-content-between">
+                <h6 class="fw-bold">Job Deteils</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h6 class="pb-3">Operations</h6>
+                        <div id="operationsList"></div>
+                    </div>
+                    <div class="col-md-8 ps-3">
+                        <div id="jobDetails" class="pb-2">
+                        </div>
+                        <div class="rowPop pb-2">
+                            <div class="accordion-container row" id="accordionOperationButton">
+                                <div class="col-md-3 col-sm-auto p-2 align-items-center d-flex justify-content-center col-xs-12 accordion-label text-secondary-ob font-weight-bolder"
+                                    id="operationName">
+                                    Additive MFG
+                                </div>
+                                <div
+                                    class="col-md-9 col-sm-auto p-2 align-items-center d-flex justify-content-end col-xs-12  d-flex gap-2 align-items-center">
+
+                                    <div class="col-auto col-xs-6 d-flex gap-3" id="operationStartButtonContainer">
+                                        <span class="text-sm font-weight-light operationTimerData"
+                                            id="operationTimerData">
+                                            00:00:00
+                                        </span>
+                                        <button type="button" class="btn bg-gradient-success gap-2 text-xs"
+                                            id="operationStatusStartButtons">
+                                            <i class="fa fa-play"></i>
+                                            <span>Start</span>
+                                        </button>
+                                        <button type="button" style="display: none;"
+                                            class="btn bg-gradient-warning gap-2 text-xs"
+                                            id="operationStatusPauseResumeButtons">
+                                            <i class="fa fa-pause" id="faPause"></i>
+                                            <i class="fa fa-play" id="faPlay"></i>
+                                            <span>Pause</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-auto col-xs-6 d-flex gap-2">
+                                        <button type="button" class="btn bg-gradient-danger d-flex gap-2 text-xs"
+                                            id="operationEndButtons">
+                                            <i class="fa fa-stop"></i>
+                                            <span>End</span>
+                                        </button>
+                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24">
+                                            <path d="M7 10l5 5 5-5z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-2" id="operationDetailsDataDiv" style="display: none;">
+                            <div class="rowPop">
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">
+                                        ID:
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-light operationDetailsData">
+                                        <!-- Content for ID -->
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">
+                                        Quantity Completed:
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-light operationDetailsData">
+                                        <!-- Content for Quantity Completed -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rowPop">
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">
+                                        Quantity Rejected:
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-light operationDetailsData">
+                                        <!-- Content for Quantity Rejected -->
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">Machine:</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-light operationDetailsData">
+                                        <!-- Content for Machine -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rowPop">
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">Machine Technology:</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-light operationDetailsData">
+                                        <!-- Content for Machine Technology -->
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">Allocated Stock ID:</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-light operationDetailsData">
+                                        <!-- Content for Allocated Stock ID -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rowPop">
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">Allocated Stock Quantity:</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-light operationDetailsData">
+                                        <!-- Content for Allocated Stock Quantity -->
+                                    </p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">Hopper Recovery:</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="rowPop">
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control" id="hopperRecoveryInput" min="0"
+                                                max="100" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rowPop stockRecoveryDiv" id="stockRecoveryDiv">
+                                <div class="col-6 col-md-3">
+                                    <p class="text-sm font-weight-normalBold">Build Recovery:</p>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="rowPop">
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control" id="buildRecoveryInput" min="0"
+                                                max="100" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rowPop">
+                            <div class="accordion-container row" id="accordionObservationsButton">
+                                <div class="col-auto accordion-label font-weight-bolder text-secondary-ob">
+                                    Observations
+                                </div>
+                                <div class="col-auto d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn-plus bg-gradient-blue text-xs py-2 px-2"
+                                        id="observationsDetailSave">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#54a5f5"
+                                            class="bi bi-floppy2-fill" viewBox="0 0 16 16">
+                                            <path d="M12 2h-2v3h2V2Z" />
+                                            <path
+                                                d="M1.5 0A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5V2.914a1.5 1.5 0 0 0-.44-1.06L14.147.439A1.5 1.5 0 0 0 13.086 0H1.5ZM4 6a1 1 0 0 1-1-1V1h10v4a1 1 0 0 1-1 1H4ZM3 9h10a1 1 0 0 1 1 1v5H2v-5a1 1 0 0 1 1-1Z" />
+                                        </svg>
+                                    </button>
+                                    <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M7 10l5 5 5-5z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="observations-box py-2" style="display: none;" id="observationsDataDiv">
+                            <div class="rowPop">
+                                <div class="col-md-6 pe-2">
+                                    <label class="font-weight-bold text-secondary-ob text-sm"
+                                        for="nameInput">Name</label>
+                                    <input type="text" class="form-control" id="observationNameInput"
+                                        placeholder="Name" />
+                                </div>
+                                <div class="col-md-6 pe-2">
+                                    <label class="font-weight-bold text-secondary-ob text-sm" for="numberInput">Sample
+                                        Number</label>
+                                    <input type="text" class="form-control" id="observationNumberInput"
+                                        placeholder="Sample Number" />
+                                </div>
+                            </div>
+                            <div class="rowPop">
+                                <div class="col-md-12 pe-2 align-items-center">
+                                    <label class="font-weight-bold text-secondary-ob text-sm"
+                                        for="messageTextarea">Note</label>
+                                    <textarea name="notes" id="observationNotesInput" class="form-control" rows="2"
+                                        placeholder="Notes"></textarea>
+                                </div>
+
+                                <!--Digital Assets DATA UI-->
+                                <div class="row-cols-sm-auto">
+                                    <button type="button" class="btn-plus bg-gradient-blue" id="digitalAddFolderButton">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 100 100">
+                                            <line x1="50" y1="10" x2="50" y2="90" stroke="black" stroke-width="25" />
+                                            <line x1="10" y1="50" x2="90" y2="50" stroke="black" stroke-width="25" />
+                                            <g fill="none" stroke="#54a5f5" stroke-width="20">
+                                                <line x1="50" y1="10" x2="50" y2="90" />
+                                                <line x1="10" y1="50" x2="90" y2="50" />
+                                            </g>
+                                        </svg>
+                                    </button>
+                                    <div class="rowPop digitalAddUrlContainer d-none">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="observationUrlInput"
+                                                placeholder="url" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" class="btn-plus bg-gradient-blue"
+                                                id="digitalAddUrlButton">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 100 100">
+                                                    <line x1="50" y1="10" x2="50" y2="90" stroke="black"
+                                                        stroke-width="25" />
+                                                    <line x1="10" y1="50" x2="90" y2="50" stroke="black"
+                                                        stroke-width="25" />
+                                                    <g fill="none" stroke="#54a5f5" stroke-width="20">
+                                                        <line x1="50" y1="10" x2="50" y2="90" />
+                                                        <line x1="10" y1="50" x2="90" y2="50" />
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="col-md-9 align-items-center">
+                                        <div class="font-weight-bolder text-secondary" id="tree">
+                                            <ul class="contextmenu" id="contextmenu"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
