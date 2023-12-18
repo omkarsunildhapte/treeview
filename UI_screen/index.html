@@ -114,28 +114,17 @@
         <div class="row">
             <div class="card col" style="overflow-x:auto;">
                 <div class="card-body">
-                    <div class="table-responsive" style="overflow-x:auto;">
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th
-                                        class="text-uppercase text-secondary text-sm font-weight-bolder ps-3 ps-md-5 align-items-center text-start py-3">
-                                        Id</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
-                                        Name</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
-                                        Created Date</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-sm font-weight-bolder align-items-center text-start py-3">
-                                        Status</th>
-                                </tr>
-                            </thead>
-                            <tbody id="projectTableBody">
-                            </tbody>
-                        </table>
+                    <div class="table-container">
+                        <ul class="d-flex justify-content-between list-unstyled p-3 border border-1 m-0 text-center">
+                            <span class="col-3">Id</span>
+                            <span class="col-3">Name</span>
+                            <span class="col-3">Created Date</span>
+                            <span class="col-3">Status</span>
+                        </ul>
+                        <ul class="table list-group" id="projectList">
+                        </ul>
                     </div>
+
                     <nav class="mt-4 d-flex justify-content-center align-items-center">
                         <ul class="pagination" id="paginationProjects"></ul>
                     </nav>
@@ -150,12 +139,12 @@
     <div class="container-fuild">
         <div class="card">
             <div class="card-title d-flex justify-content-between">
-                <h6 class="fw-bold">Job Deteils</h6>
+                <span class="fw-bold">Job Deteils</span>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 mb-5">
-                        <h6 class="pb-3">Operations</h6>
+                        <span class="mb-5">Operations</span>
                         <div id="operationsList"></div>
                     </div>
                     <div class="col-md-8 ps-3">

@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+
   const projectsData = [
     {
       "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
@@ -244,104 +245,130 @@ document.addEventListener("DOMContentLoaded", function () {
       ]
     }
   ]
+
   const itemsPerPage = 6;
   let currentPage = 1;
+  const projectList = document.getElementById("projectList");
 
-  function createProjectTable(project) {
-    const row = document.createElement("tr");
-    let squareColor = "";
-    if (project.LVN === 1) {
-      squareColor = "#1d4ed8";
-    } else if (project.LVN === 2) {
-      squareColor = "#a21caf";
-    } else if (project.LVN === 3) {
-      squareColor = "#4d7c0f";
-    } else {
-      squareColor = "#fde047";
-    }
+  function createListItem(project) {
+    let squareColor = getSquareColor(project.LVN);
 
-    row.innerHTML = `
-        <td class="text-start py-2 d-flex gap-2 accordion-header">
-            <div class="col-auto">
-                <span class="fas fa-angle-down"></span>
-                <i class="fa fa-square project" style="color: ${squareColor};"></i>
-            </div>
-            <span class="border-bottom border-dark">${project.BarID}</span>
-        </td> 
-        <td class="text-start py-2">${project.Name}</td>
-        <td class="text-start py-2">${project.CreatedDate}</td>
-        <td class="text-start py-2 d-flex justify-content-between">${project.Status} </td>
+    const listItem = document.createElement("li");
+    listItem.classList.add("d-flex", "flex-column");
+    listItem.innerHTML = `
+      <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 text-center align-items-center">
+        <div class="accordion-header text-center">
+          <span class="fas fa-plus"></span>
+          <i class="fa fa-square project" style="color: ${squareColor};"></i>
+          <span class="border-bottom border-dark">${project.BarID}</span>
+        </div>
+        <span class="project-name">${project.Name}</span>
+        <span class="project-date">${project.CreatedDate}</span>
+        <span class="project-status">${project.Status}</span>
+      </div>
+      <div>
+      <ul class="subproject-list list-unstyled border-0 border" style="display:none">
+        ${project.Jobs.map(job => createJobListItem(job).outerHTML).join('')}
+      </ul>
+      </div>
     `;
-
-    const additionalContentDiv = document.createElement('div');
-    additionalContentDiv.classList.add('additional-content', 'd-none');
-    additionalContentDiv.innerHTML = `
-        <!-- Your additional content goes here -->
-        <p>Additional content goes here</p>
-    `;
-    row.appendChild(additionalContentDiv);
-
-    const cell = row.querySelector('.accordion-header');
-    const arrowIcon = row.querySelector('.fa-angle-down');
-
-    cell.addEventListener('click', () => {
-      arrowIcon.classList.toggle('fa-angle-down');
-      arrowIcon.classList.toggle('fa-angle-up');
-      additionalContentDiv.classList.toggle('d-none');
+    const accordionHeader = listItem.querySelector('.accordion-header');
+    const arrowIcon = listItem.querySelector('.fa-plus');
+    const subprojectContainer = listItem.querySelector('.subproject-list');
+    accordionHeader.addEventListener('click', () => {
+      arrowIcon.classList.toggle('fa-plus');
+      arrowIcon.classList.toggle('fa-minus');
+      subprojectContainer.classList.toggle('d-block');
     });
-
-    return row;
+    return listItem;
   }
 
-  function addProjectsToTable(startIndex, endIndex) {
-    const tableBody = document.getElementById("projectTableBody");
-    tableBody.innerHTML = ""; // Clear existing content
+  // Similarly, update the usage of createOperationListItem
 
-    for (let i = startIndex; i < endIndex; i++) {
-      const projectRow = createProjectTable(projectsData[i]);
-      tableBody.appendChild(projectRow);
+  function createJobListItem(job) {
+    let squareColor = getSquareColor(job.LVN);
+    const listItem1 = document.createElement("li");
+    listItem1.innerHTML = `
+      <div class="d-flex flex-column">
+        <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 accordion-header">
+        <div class="accordion-header">
+          <span class="fas fa-plus"></span>
+          <i class="fa fa-square project" style="color: ${squareColor};"></i>
+          <span class="border-bottom border-dark">${job.BarID}</span>
+          </div>
+          <span class="job-name">${job.Name}</span>
+          <span class="job-date">${job.CreatedDate}</span>
+          <span class="job-status">${job.Status}</span>
+        </div>
+        <div>
+        <ul class="operation-list border-0 border" style="display:none">
+          ${job.Operations.map(operation => createOperationListItem(operation).outerHTML).join('')}
+        </ul>
+        </div>
+      </div>
+    `;
+    const accordionHeader = listItem1.querySelector('.accordion-header');
+    const arrowIcon = accordionHeader.querySelector('.fa-plus');
+    const subprojectContainer = listItem1.querySelector('.operation-list');
+    accordionHeader.addEventListener('click', () => {
+      arrowIcon.classList.toggle('fa-minus');
+      arrowIcon.classList.toggle('fa-plus');
+      debugger
+      subprojectContainer.classList.toggle('d-block');
+    });
+    return listItem1;
+  }
+
+  function createOperationListItem(operation) {
+    let squareColor = getSquareColor(operation.LVN);
+    const listItem2 = document.createElement("li");
+    listItem2.innerHTML = `
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0">
+          <i class="fa fa-square project" style="color: ${squareColor};"></i>
+          <span class="border-bottom border-dark">${operation.BarID}</span>
+          <span class="operation-name">${operation.Name}</span>
+          <span class="operation-date">${operation.CreatedDate}</span>
+          <span class="operation-status">${operation.Status}</span>
+        </div>
+      </li>
+    `;
+    return listItem2;
+  }
+
+  function getSquareColor(LVN) {
+    switch (LVN) {
+      case 1:
+        return "#1d4ed8";
+      case 2:
+        return "#a21caf";
+      case 3:
+        return "#4d7c0f";
+      default:
+        return "#fde047";
     }
+  }
+
+  function addProjectsToList(data) {
+    projectList.innerHTML = ""; // Clear existing content
+
+    data.forEach(project => {
+      const listItem = createListItem(project);
+      projectList.appendChild(listItem);
+    });
   }
 
   function updatePagination() {
-    const totalProjects = projectsData.length;
-    const totalPages = Math.ceil(totalProjects / itemsPerPage);
-    const paginationElement = document.getElementById("paginationProjects");
-    paginationElement.innerHTML = ""; // Clear existing pagination
-
-    for (let i = 1; i <= totalPages; i++) {
-      const li = document.createElement("li");
-      li.classList.add("page-item");
-      const a = document.createElement("a");
-      a.classList.add("page-link");
-      a.href = "#";
-      a.textContent = i;
-      a.addEventListener("click", function () {
-        currentPage = i;
-        const startIndex = (currentPage - 1) * itemsPerPage;
-        const endIndex = Math.min(currentPage * itemsPerPage, totalProjects);
-        addProjectsToTable(startIndex, endIndex);
-        updatePagination();
-      });
-      li.appendChild(a);
-      paginationElement.appendChild(li);
-    }
+    // Your pagination update logic here
   }
 
   function initializePage() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = Math.min(currentPage * itemsPerPage, projectsData.length);
-    addProjectsToTable(startIndex, endIndex);
+    addProjectsToList(projectsData.slice(startIndex, endIndex));
     updatePagination();
   }
-
   initializePage();
-
-
-
-
-
-
 
   ///dot design
   const operationsData = projectsData.flatMap(e => e.Jobs.flatMap(main => main.Operations));
