@@ -277,12 +277,12 @@ document.addEventListener("DOMContentLoaded", function () {
                   <ul class="list-group">
                       <li style="font-size: 12px;" class="list-group-item border-0 border rounded-3 text-center active-popup" data-category="${category}" data-popup-id="popup-${category}" data-count-id="count-${category}">All
                           ${category}</li>
-                      <li style="font-size: 12px;" class="list-group-item border-0 border rounded-3 text-center" data-category="${category}" data-popup-id="popup-${category}" data-count-id="count-${category}">Created
+                      <li style="font-size: 12px;" class="list-group-item border-0 border rounded-3 text-center active-popup" data-category="${category}" data-popup-id="popup-${category}" data-count-id="count-${category}">Created
                           ${category}</li>
-                      <li style="font-size: 12px;" class="list-group-item border-0 border rounded-3 text-center" data-category="${category}" data-popup-id="popup-${category}" data-count-id="count-${category}">Work in
+                      <li style="font-size: 12px;" class="list-group-item border-0 border rounded-3 text-center active-popup" data-category="${category}" data-popup-id="popup-${category}" data-count-id="count-${category}">Work in
                           Progress ${category}
                       </li>
-                      <li style="font-size: 12px;" class="list-group-item border-0 border rounded-3 text-center" data-category="${category}" data-popup-id="popup-${category}" data-count-id="count-${category}">Completed
+                      <li style="font-size: 12px;" class="list-group-item border-0 border rounded-3 text-center active-popup" data-category="${category}" data-popup-id="popup-${category}" data-count-id="count-${category}">Completed
                           ${category}</li>
                   </ul>
               </div>

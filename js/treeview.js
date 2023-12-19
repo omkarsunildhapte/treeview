@@ -1,31 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const accordionProjects = document.getElementById("accordionProjects");
-
-
-  let videoStream = null;
-
-
-  //===> CAMERA <===
-  barcodeCameraBtn.onclick = function () {
-    barcodeCameraDiv.classList.remove("d-none");
-    try {
-      navigator.mediaDevices
-        .getUserMedia({ video: true })
-        .then(function (stream) {
-          const videoElement = document.getElementById("barcodeCamera");
-          videoElement.srcObject = stream;
-        })
-        .catch(function (error) {
-          console.error("Error accessing camera:", error);
-        });
-    } catch (error) {
-      console.error("Error accessing camera:", error);
-    }
-
-    barcodeClose.onclick = function () {
-      barcodeCameraDiv.classList.add("d-none");
-    };
-  };
   //====> DARK AND LIGHT THEME BUTTON <====
   const checkboxDarkLight = document.getElementById("checkboxDarkLight");
   const root = document.documentElement;
@@ -258,13 +231,13 @@ document.addEventListener("DOMContentLoaded", function () {
     listItem.innerHTML = `
       <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 text-center align-items-center">
         <div class="accordion-header text-center">
-          <span class="fas fa-plus"></span>
+          <span class="fas fa-plus main-body"></span>
           <i class="fa fa-square project" style="color: ${squareColor};"></i>
-          <span class="border-bottom border-dark">${project.BarID}</span>
+          <span class="border-bottom border-dark main-body">${project.BarID}</span>
         </div>
-        <span class="project-name">${project.Name}</span>
-        <span class="project-date">${project.CreatedDate}</span>
-        <span class="project-status">${project.Status}</span>
+        <span class="project-name main-body">${project.Name}</span>
+        <span class="project-date main-body">${project.CreatedDate}</span>
+        <span class="project-status main-body">${project.Status}</span>
       </div>
       <div>
       <ul class="subproject-list list-unstyled border-0 border" style="display:none">
@@ -289,29 +262,28 @@ document.addEventListener("DOMContentLoaded", function () {
     listItem1.innerHTML = `
       <div class="d-flex flex-column">
         <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 accordion-header">
-        <div class="accordion-header">
-          <span class="fas fa-plus"></span>
-          <i class="fa fa-square project" style="color: ${squareColor};"></i>
-          <span class="border-bottom border-dark">${job.BarID}</span>
+          <div class="accordion-header d-flex justify-content-center">
+            <span class="fas fa-plus main-body"></span>
+            <i class="fa fa-square project" style="color: ${squareColor};"></i>
+            <span class="main-body border-bottom border-dark">${job.BarID}</span>
           </div>
-          <span class="job-name">${job.Name}</span>
-          <span class="job-date">${job.CreatedDate}</span>
-          <span class="job-status">${job.Status}</span>
+          <span class="text-center job-name main-body">${job.Name}</span>
+          <span class="text-center job-date main-body">${job.CreatedDate}</span>
+          <span class="text-center job-status main-body">${job.Status}</span>
         </div>
         <div>
-        <ul class="operation-list border-0 border" style="display:none">
-          ${job.Operations.map(operation => createOperationListItem(operation).outerHTML).join('')}
-        </ul>
+          <ul class="operation-list border-0 border" style="display:none">
+            ${job.Operations.map(operation => createOperationListItem(operation).outerHTML).join('')}
+          </ul>
         </div>
       </div>
     `;
     const accordionHeader = listItem1.querySelector('.accordion-header');
-    const arrowIcon = accordionHeader.querySelector('.project');
+    const arrowIcon = accordionHeader.querySelector('.fas');
     const subprojectContainer = listItem1.querySelector('.operation-list');
     accordionHeader.addEventListener('click', () => {
-      arrowIcon.classList.toggle('fa-minus');
       arrowIcon.classList.toggle('fa-plus');
-      debugger
+      arrowIcon.classList.toggle('fa-minus');
       subprojectContainer.classList.toggle('d-block');
     });
     return listItem1;
@@ -324,10 +296,10 @@ document.addEventListener("DOMContentLoaded", function () {
       <li class="list-group-item">
         <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0">
           <i class="fa fa-square project" style="color: ${squareColor};"></i>
-          <span class="border-bottom border-dark">${operation.BarID}</span>
-          <span class="operation-name">${operation.Name}</span>
-          <span class="operation-date">${operation.CreatedDate}</span>
-          <span class="operation-status">${operation.Status}</span>
+          <span class="border-bottom  main-bodyborder-dark">${operation.BarID}</span>
+          <span class="operation-name main-body">${operation.Name}</span>
+          <span class="operation-date main-body">${operation.CreatedDate}</span>
+          <span class="operation-status main-body">${operation.Status}</span>
         </div>
       </li>
     `;

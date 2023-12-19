@@ -185,6 +185,10 @@
   max-width: 60px;
 }
 
+.main-body {
+  color: var(--bs-body-color) !important;
+}
+
 body {
   margin: 0;
   padding: 0;
