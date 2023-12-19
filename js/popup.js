@@ -258,16 +258,16 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
   function createCard(category, count) {
     return `
-      <div style="max-width: 360px; min-width: 340px;" class="card col-md-3 mb-2 m-0 mx-1">
+      <div style="max-width: 360px;" class="card col-lg-3 col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-2 m-0">
           <div class="card-body m-0 p-0 py-3">
               <div class="row align-items-center">
-                  <div class="col-md-8">
-                      <span class="fw-bold">${category}</span>
+                  <div class="col-sm-6 col-md-6 col-6 col-lg-6">
+                      <span class="fw-bold text-nowrap">${category}</span>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-sm-3 col-md-3 col-lg-3 col-3">
                       <span class="fw-bold" id="count-${category}">${count}</span>
                   </div>
-                  <div class="col-auto dashboard-tooltip px-3 py-2 text-center rounded-3">
+                  <div class="col-sm-2 col-md-2 col-lg-2 col-2 dashboard-tooltip px-3 py-2 text-center rounded-3">
                       <i class="fa fa-ellipsis-v toggle-popup text-white" data-popup-id="popup-${category}"></i>
                   </div>
               </div>
@@ -293,7 +293,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener('click', function (event) {
     const target = event.target;
-    debugger
     document.querySelectorAll('.popup').forEach(popup => {
       if (popup.id !== `popup-${target.dataset.category}`) {
         popup.style.display = 'none';

@@ -178,3 +178,21 @@ body {
 .axis-label {
     font-size: 12px;
 }
+
+.input-group-with-icon {
+    position: relative;
+}
+
+.input-group-with-icon .form-control {
+    padding-left: 2rem;
+    /* Adjust as needed */
+}
+
+.input-group-with-icon .fas {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    /* Adjust as needed */
+    transform: translateY(-50%);
+    z-index: 2;
+}
