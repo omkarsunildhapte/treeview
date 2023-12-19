@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../css/jobDiv.css">
     <link rel="stylesheet" href="../css/soft-ui-dashboard.css">
     <script src="../js/popup.js"></script>
-
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <link href="https://cdn.syncfusion.com/ej2/22.1.39/ej2-navigations/styles/material.css" rel="stylesheet"
         type="text/css">
@@ -35,21 +35,94 @@
 
 </head>
 
-<body>
-    <div class="container-fluid">
-        <div class="d-flex justify-content-between">
-            <div class="col-md-6">
+<body style="overflow: scroll; height: 100%;">
+    <div class="container-fluid pt-2">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
                     <path
                         d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
                 </svg>
-                <span>Dashborad</span>
+                <span class="fw-bold">Dashborad</span>
             </div>
-            <div class="col-md-6 justify-content-end d-flex">
-                <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-2 justify-content-end d-flex">
+                <div class="input-group position-relative">
+                    <input class="form-control py-2" type="search" placeholder="Type here" aria-label="Search">
+                    <i class="fas fa-search position-absolute top-50 start-0 translate-middle-y"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-3 gap-2" id="dashboardCards"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-title p-3">
+                        <span class="fw-normal"> Project Overview </span>
+                    </div>
+                    <div class="card-body" style="height: 350px;">
+                        <svg id="scatterPlot" class="w-100 h-100"></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-title p-3 row">
+                        <div class="col-md-11">
+                            <span class="fw-normal"> Tasks </span>
+                        </div>
+                        <div class="col-auto dashboard-tooltip px-3 py-2 text-center rounded-3">
+                            <i class="fa fa-ellipsis-v toggle-popup text-white"></i>
+                        </div>
+                    </div>
+                    <div class="card-body position-relative" style="height: 350px;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th scope="col" class="border-0 text-center">Task Name</th>
+                                        <th scope="col" class="border-0 text-center">Status</th>
+                                        <th scope="col" class="border-0 text-center">Barcode</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="position-absolute fixed-bottom d-flex gap-2 m-3" style="height: 40px;">
+                            <div class="dashboard-tooltip px-3 py-2 text-center rounded-3">
+                                <i class="text-white fa fa-angle-left" id="prevPage"></i>
+                            </div>
+                            <div class="dashboard-tooltip px-3 py-2 text-center rounded-3">
+                                <i class="text-white fa fa-angle-right" id="nextPage"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-3 gap-2" id="dashboardCards2"></div>
+        <div class="row">
+            <div class="card">
+                <div class="card-title">
+                    <span>Projects</span>
+                    <p><span id="tableBody1count"></span> project completed</p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table" id="projectTable">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Projects</th>
+                                    <th class="text-center">Members</th>
+                                    <th class="text-center">Promised Date</th>
+                                    <th class="text-center">Completion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody1"></tbody>
+                        </table>
                     </div>
                 </div>
             </div>

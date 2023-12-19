@@ -283,8 +283,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return listItem;
   }
 
-  // Similarly, update the usage of createOperationListItem
-
   function createJobListItem(job) {
     let squareColor = getSquareColor(job.LVN);
     const listItem1 = document.createElement("li");
@@ -308,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
     const accordionHeader = listItem1.querySelector('.accordion-header');
-    const arrowIcon = accordionHeader.querySelector('.fa-plus');
+    const arrowIcon = accordionHeader.querySelector('.project');
     const subprojectContainer = listItem1.querySelector('.operation-list');
     accordionHeader.addEventListener('click', () => {
       arrowIcon.classList.toggle('fa-minus');

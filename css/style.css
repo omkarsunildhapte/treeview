@@ -149,3 +149,32 @@ body {
     color: var(--white-color);
     background-color: var(--bs-body-bg);
 }
+
+.list-group-item:hover,
+.list-group-item.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.active-popup {
+    background-color: #007bff;
+}
+
+#scatterPlot {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.dot {
+    fill: blue;
+}
+
+.line {
+    fill: none;
+    stroke: blue;
+    stroke-width: 2px;
+}
+
+.axis-label {
+    font-size: 12px;
+}

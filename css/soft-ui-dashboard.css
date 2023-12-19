@@ -180,6 +180,11 @@
   background-color: var(--bs-body-root-bg);
 }
 
+.dashboard-tooltip {
+  background-color: #007bff;
+  max-width: 60px;
+}
+
 body {
   margin: 0;
   padding: 0;
