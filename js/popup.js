@@ -377,72 +377,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+  // Set up the SVG container dimensions
   const data = [
     { month: "January", value: 10 },
     { month: "February", value: 15 },
     { month: "March", value: 8 },
     { month: "April", value: 12 },
     { month: "May", value: 20 }
-    // Add more months and values as needed
   ];
 
-  // Set up the SVG container dimensions
-  const svg = d3.select("#scatterPlot");
-  const margin = { top: 20, right: 20, bottom: 40, left: 40 };
-  const width = 400 - margin.left - margin.right;
-  const height = 300 - margin.top - margin.bottom;
+  const myChart = echarts.init(document.getElementById('barChart'));
 
-  // Create a group for the chart within the SVG
-  const chart = svg.append("g")
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  const option = {
+    xAxis: {
+      type: 'category',
+      data: data.map(d => d.month),
+      splitLine: {  // Add split lines on the x-axis
+        show: true
+      }
+    },
+    yAxis: {
+      type: 'value',
+      splitLine: {  // Add split lines on the y-axis
+        show: true
+      }
+    },
+    legend: {
+      data: ['Project Numbers']
+    },
+    series: [{
+      type: 'bar',
+      name: 'Project Numbers',
+      id: 'sales',
+      data: data.map(d => d.value),
+      itemStyle: {
+        color: '#007bff',
+      },
+      universalTransition: {
+        enabled: true,
+        divideShape: 'clone'
+      }
+    }]
+  };
 
-  // Set up the scales for x and y axes
-  const xScale = d3.scaleBand()
-    .range([0, width])
-    .padding(0.1)
-    .domain(data.map(d => d.month));
-
-  const yScale = d3.scaleLinear()
-    .range([height, 0])
-    .domain([0, d3.max(data, d => d.value)]);
-
-  // Create the x-axis
-  chart.append("g")
-    .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(xScale))
-    .selectAll("text")
-    .attr("class", "axis-label")
-    .style("text-anchor", "end")
-    .attr("dx", "-.8em")
-    .attr("dy", ".15em")
-    .attr("transform", "rotate(-45)");
-
-  // Create the y-axis
-  chart.append("g")
-    .call(d3.axisLeft(yScale))
-    .append("text")
-    .attr("class", "axis-label")
-    .attr("transform", "rotate(-90)")
-    .attr("y", 6)
-    .attr("dy", ".71em")
-    .style("text-anchor", "end")
-    .text("Project Number");
-
-  // Create the dots
-  chart.selectAll(".dot")
-    .data(data)
-    .enter().append("circle")
-    .attr("class", "dot")
-    .attr("cx", d => xScale(d.month) + xScale.bandwidth() / 2)
-    .attr("cy", d => yScale(d.value))
-    .attr("r", 5); // Set the radius of the dots
-
-  // Connect the dots with lines
-  chart.append("path")
-    .datum(data)
-    .attr("class", "line")
-    .attr("d", d3.line()
-      .x(d => xScale(d.month) + xScale.bandwidth() / 2)
-      .y(d => yScale(d.value))
-    );
+  myChart.setOption(option);
 })

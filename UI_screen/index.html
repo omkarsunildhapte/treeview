@@ -131,171 +131,50 @@
             </div>
         </div>
     </div>
-    <div class="container-fuild">
-        <div class="card">
-            <div class="card-title d-flex justify-content-between">
-                <span class="fw-bold">Job Deteils</span>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <span class="mb-5">Operations</span>
-                        <div id="operationsList"></div>
+    <div class="card">
+        <div class="card-title d-flex justify-content-between">
+            <span class="fw-bold">Job Deteils</span>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="pb-5">Operations</span>
+                    <div id="operationsList" style="height: 500px; overflow-x: scroll;"></div>
+                </div>
+                <div class="col-md-8 ps-3" style="height: 500px; overflow-x: scroll;">
+                    <div id="jobDetails" class="pb-2">
                     </div>
-                    <div class="col-md-8 ps-3">
-                        <div id="jobDetails" class="pb-2">
-                        </div>
-                        <div class="rowPop pb-2">
-                            <div class="accordion-container row" id="accordionOperationButton">
-                                <div class="col-md-3 col-sm-auto p-2 align-items-center d-flex justify-content-center col-xs-12 accordion-label text-secondary-ob font-weight-bolder"
-                                    id="operationName">
-                                    Additive MFG
-                                </div>
-                                <div
-                                    class="col-md-9 col-sm-auto p-2 align-items-center d-flex justify-content-end col-xs-12  d-flex gap-2 align-items-center">
+                    <div class="rowPop pb-2">
+                        <div class="accordion-container row" id="accordionOperationButton">
+                            <div class="col-md-3 col-sm-auto p-2 align-items-center d-flex justify-content-center col-xs-12 accordion-label text-secondary-ob font-weight-bolder"
+                                id="operationName">
+                                Additive MFG
+                            </div>
+                            <div
+                                class="col-md-9 col-sm-auto p-2 align-items-center d-flex justify-content-end col-xs-12  d-flex gap-2 align-items-center">
 
-                                    <div class="col-auto col-xs-6 d-flex gap-3" id="operationStartButtonContainer">
-                                        <span class="text-sm font-weight-light operationTimerData"
-                                            id="operationTimerData">
-                                            00:00:00
-                                        </span>
-                                        <button type="button" class="btn bg-gradient-success gap-2 text-xs"
-                                            id="operationStatusStartButtons">
-                                            <i class="fa fa-play"></i>
-                                            <span>Start</span>
-                                        </button>
-                                        <button type="button" style="display: none;"
-                                            class="btn bg-gradient-warning gap-2 text-xs"
-                                            id="operationStatusPauseResumeButtons">
-                                            <i class="fa fa-pause" id="faPause"></i>
-                                            <i class="fa fa-play" id="faPlay"></i>
-                                            <span>Pause</span>
-                                        </button>
-                                    </div>
-                                    <div class="col-auto col-xs-6 d-flex gap-2">
-                                        <button type="button" class="btn bg-gradient-danger d-flex gap-2 text-xs"
-                                            id="operationEndButtons">
-                                            <i class="fa fa-stop"></i>
-                                            <span>End</span>
-                                        </button>
-                                        <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24">
-                                            <path d="M7 10l5 5 5-5z" />
-                                        </svg>
-                                    </div>
+                                <div class="col-auto col-xs-6 d-flex gap-3" id="operationStartButtonContainer">
+                                    <span class="text-sm font-weight-light operationTimerData" id="operationTimerData">
+                                        00:00:00
+                                    </span>
+                                    <button type="button" class="btn bg-gradient-success gap-2 text-xs"
+                                        id="operationStatusStartButtons">
+                                        <i class="fa fa-play"></i>
+                                        <span>Start</span>
+                                    </button>
+                                    <button type="button" style="display: none;"
+                                        class="btn bg-gradient-warning gap-2 text-xs"
+                                        id="operationStatusPauseResumeButtons">
+                                        <i class="fa fa-pause" id="faPause"></i>
+                                        <i class="fa fa-play" id="faPlay"></i>
+                                        <span>Pause</span>
+                                    </button>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-12 py-2" id="operationDetailsDataDiv" style="display: none;">
-                            <div class="rowPop">
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">
-                                        ID:
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-light operationDetailsData">
-                                        <!-- Content for ID -->
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">
-                                        Quantity Completed:
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-light operationDetailsData">
-                                        <!-- Content for Quantity Completed -->
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="rowPop">
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">
-                                        Quantity Rejected:
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-light operationDetailsData">
-                                        <!-- Content for Quantity Rejected -->
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">Machine:</p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-light operationDetailsData">
-                                        <!-- Content for Machine -->
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="rowPop">
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">Machine Technology:</p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-light operationDetailsData">
-                                        <!-- Content for Machine Technology -->
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">Allocated Stock ID:</p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-light operationDetailsData">
-                                        <!-- Content for Allocated Stock ID -->
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="rowPop">
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">Allocated Stock Quantity:</p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-light operationDetailsData">
-                                        <!-- Content for Allocated Stock Quantity -->
-                                    </p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">Hopper Recovery:</p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="rowPop">
-                                        <div class="col-md-6">
-                                            <input type="number" class="form-control" id="hopperRecoveryInput" min="0"
-                                                max="100" placeholder="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="rowPop stockRecoveryDiv" id="stockRecoveryDiv">
-                                <div class="col-6 col-md-3">
-                                    <p class="text-sm font-weight-normalBold">Build Recovery:</p>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="rowPop">
-                                        <div class="col-md-6">
-                                            <input type="number" class="form-control" id="buildRecoveryInput" min="0"
-                                                max="100" placeholder="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rowPop">
-                            <div class="accordion-container row" id="accordionObservationsButton">
-                                <div class="col-auto accordion-label font-weight-bolder text-secondary-ob">
-                                    Observations
-                                </div>
-                                <div class="col-auto d-flex justify-content-between align-items-center">
-                                    <button type="button" class="btn-plus bg-gradient-blue text-xs py-2 px-2"
-                                        id="observationsDetailSave">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#54a5f5"
-                                            class="bi bi-floppy2-fill" viewBox="0 0 16 16">
-                                            <path d="M12 2h-2v3h2V2Z" />
-                                            <path
-                                                d="M1.5 0A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5V2.914a1.5 1.5 0 0 0-.44-1.06L14.147.439A1.5 1.5 0 0 0 13.086 0H1.5ZM4 6a1 1 0 0 1-1-1V1h10v4a1 1 0 0 1-1 1H4ZM3 9h10a1 1 0 0 1 1 1v5H2v-5a1 1 0 0 1 1-1Z" />
-                                        </svg>
+                                <div class="col-auto col-xs-6 d-flex gap-2">
+                                    <button type="button" class="btn bg-gradient-danger d-flex gap-2 text-xs"
+                                        id="operationEndButtons">
+                                        <i class="fa fa-stop"></i>
+                                        <span>End</span>
                                     </button>
                                     <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                         <path d="M7 10l5 5 5-5z" />
@@ -303,68 +182,183 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="observations-box py-2" style="display: none;" id="observationsDataDiv">
-                            <div class="rowPop">
-                                <div class="col-md-6 pe-2">
-                                    <label class="font-weight-bold text-secondary-ob text-sm"
-                                        for="nameInput">Name</label>
-                                    <input type="text" class="form-control" id="observationNameInput"
-                                        placeholder="Name" />
-                                </div>
-                                <div class="col-md-6 pe-2">
-                                    <label class="font-weight-bold text-secondary-ob text-sm" for="numberInput">Sample
-                                        Number</label>
-                                    <input type="text" class="form-control" id="observationNumberInput"
-                                        placeholder="Sample Number" />
+                    </div>
+                    <div class="col-12 py-2" id="operationDetailsDataDiv" style="display: none;">
+                        <div class="rowPop">
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">
+                                    ID:
+                                </p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-light operationDetailsData">
+                                    <!-- Content for ID -->
+                                </p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">
+                                    Quantity Completed:
+                                </p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-light operationDetailsData">
+                                    <!-- Content for Quantity Completed -->
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rowPop">
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">
+                                    Quantity Rejected:
+                                </p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-light operationDetailsData">
+                                    <!-- Content for Quantity Rejected -->
+                                </p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">Machine:</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-light operationDetailsData">
+                                    <!-- Content for Machine -->
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rowPop">
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">Machine Technology:</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-light operationDetailsData">
+                                    <!-- Content for Machine Technology -->
+                                </p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">Allocated Stock ID:</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-light operationDetailsData">
+                                    <!-- Content for Allocated Stock ID -->
+                                </p>
+                            </div>
+                        </div>
+                        <div class="rowPop">
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">Allocated Stock Quantity:</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-light operationDetailsData">
+                                    <!-- Content for Allocated Stock Quantity -->
+                                </p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">Hopper Recovery:</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="rowPop">
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" id="hopperRecoveryInput" min="0"
+                                            max="100" placeholder="" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="rowPop">
-                                <div class="col-md-12 pe-2 align-items-center">
-                                    <label class="font-weight-bold text-secondary-ob text-sm"
-                                        for="messageTextarea">Note</label>
-                                    <textarea name="notes" id="observationNotesInput" class="form-control" rows="2"
-                                        placeholder="Notes"></textarea>
-                                </div>
-
-                                <!--Digital Assets DATA UI-->
-                                <div class="row-cols-sm-auto">
-                                    <button type="button" class="btn-plus bg-gradient-blue" id="digitalAddFolderButton">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            viewBox="0 0 100 100">
-                                            <line x1="50" y1="10" x2="50" y2="90" stroke="black" stroke-width="25" />
-                                            <line x1="10" y1="50" x2="90" y2="50" stroke="black" stroke-width="25" />
-                                            <g fill="none" stroke="#54a5f5" stroke-width="20">
-                                                <line x1="50" y1="10" x2="50" y2="90" />
-                                                <line x1="10" y1="50" x2="90" y2="50" />
-                                            </g>
-                                        </svg>
-                                    </button>
-                                    <div class="rowPop digitalAddUrlContainer d-none">
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" id="observationUrlInput"
-                                                placeholder="url" />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <button type="button" class="btn-plus bg-gradient-blue"
-                                                id="digitalAddUrlButton">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 100 100">
-                                                    <line x1="50" y1="10" x2="50" y2="90" stroke="black"
-                                                        stroke-width="25" />
-                                                    <line x1="10" y1="50" x2="90" y2="50" stroke="black"
-                                                        stroke-width="25" />
-                                                    <g fill="none" stroke="#54a5f5" stroke-width="20">
-                                                        <line x1="50" y1="10" x2="50" y2="90" />
-                                                        <line x1="10" y1="50" x2="90" y2="50" />
-                                                    </g>
-                                                </svg>
-                                            </button>
-                                        </div>
+                        </div>
+                        <div class="rowPop stockRecoveryDiv" id="stockRecoveryDiv">
+                            <div class="col-6 col-md-3">
+                                <p class="text-sm font-weight-normalBold">Build Recovery:</p>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="rowPop">
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" id="buildRecoveryInput" min="0"
+                                            max="100" placeholder="" />
                                     </div>
-                                    <div id="col-md-9 align-items-center">
-                                        <div class="font-weight-bolder text-secondary" id="tree">
-                                            <ul class="contextmenu" id="contextmenu"></ul>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowPop">
+                        <div class="accordion-container row" id="accordionObservationsButton">
+                            <div class="col-auto accordion-label font-weight-bolder text-secondary-ob">
+                                Observations
+                            </div>
+                            <div class="col-auto d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn-plus bg-gradient-blue text-xs py-2 px-2"
+                                    id="observationsDetailSave">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#54a5f5"
+                                        class="bi bi-floppy2-fill" viewBox="0 0 16 16">
+                                        <path d="M12 2h-2v3h2V2Z" />
+                                        <path
+                                            d="M1.5 0A1.5 1.5 0 0 0 0 1.5v13A1.5 1.5 0 0 0 1.5 16h13a1.5 1.5 0 0 0 1.5-1.5V2.914a1.5 1.5 0 0 0-.44-1.06L14.147.439A1.5 1.5 0 0 0 13.086 0H1.5ZM4 6a1 1 0 0 1-1-1V1h10v4a1 1 0 0 1-1 1H4ZM3 9h10a1 1 0 0 1 1 1v5H2v-5a1 1 0 0 1 1-1Z" />
+                                    </svg>
+                                </button>
+                                <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M7 10l5 5 5-5z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="observations-box py-2" style="display: none;" id="observationsDataDiv">
+                        <div class="rowPop">
+                            <div class="col-md-6 pe-2">
+                                <label class="font-weight-bold text-secondary-ob text-sm" for="nameInput">Name</label>
+                                <input type="text" class="form-control" id="observationNameInput" placeholder="Name" />
+                            </div>
+                            <div class="col-md-6 pe-2">
+                                <label class="font-weight-bold text-secondary-ob text-sm" for="numberInput">Sample
+                                    Number</label>
+                                <input type="text" class="form-control" id="observationNumberInput"
+                                    placeholder="Sample Number" />
+                            </div>
+                        </div>
+                        <div class="rowPop">
+                            <div class="col-md-12 pe-2 align-items-center">
+                                <label class="font-weight-bold text-secondary-ob text-sm"
+                                    for="messageTextarea">Note</label>
+                                <textarea name="notes" id="observationNotesInput" class="form-control" rows="2"
+                                    placeholder="Notes"></textarea>
+                            </div>
+
+                            <!--Digital Assets DATA UI-->
+                            <div class="row-cols-sm-auto">
+                                <button type="button" class="btn-plus bg-gradient-blue" id="digitalAddFolderButton">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 100 100">
+                                        <line x1="50" y1="10" x2="50" y2="90" stroke="black" stroke-width="25" />
+                                        <line x1="10" y1="50" x2="90" y2="50" stroke="black" stroke-width="25" />
+                                        <g fill="none" stroke="#54a5f5" stroke-width="20">
+                                            <line x1="50" y1="10" x2="50" y2="90" />
+                                            <line x1="10" y1="50" x2="90" y2="50" />
+                                        </g>
+                                    </svg>
+                                </button>
+                                <div class="rowPop digitalAddUrlContainer d-none">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="observationUrlInput"
+                                            placeholder="url" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn-plus bg-gradient-blue"
+                                            id="digitalAddUrlButton">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 100 100">
+                                                <line x1="50" y1="10" x2="50" y2="90" stroke="black"
+                                                    stroke-width="25" />
+                                                <line x1="10" y1="50" x2="90" y2="50" stroke="black"
+                                                    stroke-width="25" />
+                                                <g fill="none" stroke="#54a5f5" stroke-width="20">
+                                                    <line x1="50" y1="10" x2="50" y2="90" />
+                                                    <line x1="10" y1="50" x2="90" y2="50" />
+                                                </g>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="col-md-9 align-items-center">
+                                    <div class="font-weight-bolder text-secondary" id="tree">
+                                        <ul class="contextmenu" id="contextmenu"></ul>
                                     </div>
                                 </div>
                             </div>
