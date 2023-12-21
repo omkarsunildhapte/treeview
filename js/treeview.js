@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //====> DARK AND LIGHT THEME BUTTON <====
   const checkboxDarkLight = document.getElementById("checkboxDarkLight");
   const root = document.documentElement;
   checkboxDarkLight.addEventListener("change", () => {
@@ -11,212 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  const projectsData = [
-    {
-      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
-      "BarID": "QLVN9E",
-      "Name": "3D Printing",
-      "TypeID": 1,
-      "LVN": 3,
-      "CVN": 0,
-      "CreatedDate": "06-Nov-23 11:29:51 AM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
-        {
-          "GUID": "5f8a4127-22e3-4ae0-bee8-6d2a90aa93fc",
-          "BarID": "B0KEPO",
-          "Name": "3D Build",
-          "TypeID": 2,
-          "LVN": 3,
-          "CVN": 0,
-          "CreatedDate": "06-Nov-23 11:30:07 AM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 10,
-          "Operations": [
-            {
-              "GUID": "590807be-8a4d-4a08-850f-47c5a5f6fc20",
-              "BarID": "2Y829T",
-              "Name": "Additive MFG",
-              "TypeID": 3,
-              "LVN": 8,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "Processed",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 10,
-              "BuildRecovery": 20,
-              "StartTime": "14-Nov-23 5:15:02 PM",
-              "EndTime": "14-Nov-23 5:16:23 PM",
-              "TimeSpent": "0:0:12",
-              "IsDone": true,
-              "InProgress": true,
-              "OperationType": "Build"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
-      "BarID": "WVT1WT",
-      "Name": "P1",
-      "TypeID": 1,
-      "LVN": 2,
-      "CVN": 0,
-      "CreatedDate": "14-Nov-23 4:53:51 PM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
-        {
-          "GUID": "b6788070-ce0e-4a87-a41d-f95dfd5fdf8b",
-          "BarID": "Y9D1OM",
-          "Name": "Job 1",
-          "TypeID": 2,
-          "LVN": 1,
-          "CVN": 0,
-          "CreatedDate": "14-Nov-23 5:18:11 PM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 0,
-          "Operations": [
-            {
-              "GUID": "a2fd6630-a971-4f69-9659-0b19c4d7900f",
-              "BarID": "6AIOZ0",
-              "Name": "Issue Material",
-              "TypeID": 3,
-              "LVN": 10,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "WorkInProgress",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 0,
-              "BuildRecovery": 0,
-              "StartTime": "16-Nov-23 3:30:08 PM",
-              "EndTime": "14-Nov-23 5:18:28 PM",
-              "TimeSpent": "0:0:40",
-              "IsDone": false,
-              "InProgress": true,
-              "OperationType": "StockRecovery"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
-      "BarID": "U8WMIS",
-      "Name": "P2",
-      "TypeID": 1,
-      "LVN": 2,
-      "CVN": 0,
-      "CreatedDate": "17-Nov-23 2:37:24 PM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
-        {
-          "GUID": "999f2460-6617-4368-9785-49906e26f908",
-          "BarID": "7IY9EP",
-          "Name": "J2",
-          "TypeID": 2,
-          "LVN": 1,
-          "CVN": 0,
-          "CreatedDate": "17-Nov-23 2:47:41 PM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 0,
-          "Operations": [
-            {
-              "GUID": "5a4f5631-ced3-4a45-9b68-83464a3d07df",
-              "BarID": "ZU7AK4",
-              "Name": "Issue Material",
-              "TypeID": 3,
-              "LVN": 1,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "Created",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 0,
-              "BuildRecovery": 0,
-              "StartTime": "17-Nov-23 2:47:49 PM",
-              "EndTime": "17-Nov-23 2:47:49 PM",
-              "TimeSpent": "0:0:0",
-              "IsDone": false,
-              "InProgress": false,
-              "OperationType": "StockRecovery"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
-      "BarID": "N76WFM",
-      "Name": "P3",
-      "TypeID": 1,
-      "LVN": 2,
-      "CVN": 0,
-      "CreatedDate": "17-Nov-23 2:37:43 PM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
-        {
-          "GUID": "cfb13e1c-cda2-4d38-9d8d-bcd16676c9ec",
-          "BarID": "PL3DSC",
-          "Name": "Job 3",
-          "TypeID": 2,
-          "LVN": 1,
-          "CVN": 0,
-          "CreatedDate": "17-Nov-23 2:47:56 PM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 0,
-          "Operations": [
-            {
-              "GUID": "c8f870cf-48b9-4cf7-8e38-bf3b8eb9133e",
-              "BarID": "AV9XLW",
-              "Name": "Issue Material",
-              "TypeID": 3,
-              "LVN": 1,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "Created",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 0,
-              "BuildRecovery": 0,
-              "StartTime": "17-Nov-23 2:47:56 PM",
-              "EndTime": "17-Nov-23 2:47:56 PM",
-              "TimeSpent": "0:0:0",
-              "IsDone": false,
-              "InProgress": false,
-              "OperationType": "StockRecovery"
-            }
-          ]
-        }
-      ]
-    }
-  ]
   const projectsData2 = [
     {
       "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
@@ -228,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "CreatedDate": "06-Nov-23 11:29:51 AM",
       "SyncStatus": "synced",
       "Status": "Created",
-    },
-    {
+    }, {
       "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
       "BarID": "WVT1WT",
       "Name": "P1",
@@ -239,8 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "CreatedDate": "14-Nov-23 4:53:51 PM",
       "SyncStatus": "synced",
       "Status": "Created",
-    },
-    {
+    }, {
       "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
       "BarID": "U8WMIS",
       "Name": "P2",
@@ -250,8 +41,247 @@ document.addEventListener("DOMContentLoaded", function () {
       "CreatedDate": "17-Nov-23 2:37:24 PM",
       "SyncStatus": "synced",
       "Status": "Created",
-    },
-    {
+    }, {
+      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
+      "BarID": "N76WFM",
+      "Name": "P3",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:43 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
+      "BarID": "QLVN9E",
+      "Name": "3D Printing",
+      "TypeID": 1,
+      "LVN": 3,
+      "CVN": 0,
+      "CreatedDate": "06-Nov-23 11:29:51 AM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
+      "BarID": "WVT1WT",
+      "Name": "P1",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "14-Nov-23 4:53:51 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
+      "BarID": "U8WMIS",
+      "Name": "P2",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:24 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
+      "BarID": "N76WFM",
+      "Name": "P3",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:43 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
+      "BarID": "QLVN9E",
+      "Name": "3D Printing",
+      "TypeID": 1,
+      "LVN": 3,
+      "CVN": 0,
+      "CreatedDate": "06-Nov-23 11:29:51 AM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
+      "BarID": "WVT1WT",
+      "Name": "P1",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "14-Nov-23 4:53:51 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
+      "BarID": "U8WMIS",
+      "Name": "P2",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:24 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
+      "BarID": "N76WFM",
+      "Name": "P3",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:43 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
+      "BarID": "QLVN9E",
+      "Name": "3D Printing",
+      "TypeID": 1,
+      "LVN": 3,
+      "CVN": 0,
+      "CreatedDate": "06-Nov-23 11:29:51 AM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
+      "BarID": "WVT1WT",
+      "Name": "P1",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "14-Nov-23 4:53:51 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
+      "BarID": "U8WMIS",
+      "Name": "P2",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:24 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
+      "BarID": "N76WFM",
+      "Name": "P3",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:43 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
+      "BarID": "QLVN9E",
+      "Name": "3D Printing",
+      "TypeID": 1,
+      "LVN": 3,
+      "CVN": 0,
+      "CreatedDate": "06-Nov-23 11:29:51 AM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
+      "BarID": "WVT1WT",
+      "Name": "P1",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "14-Nov-23 4:53:51 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
+      "BarID": "U8WMIS",
+      "Name": "P2",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:24 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
+      "BarID": "N76WFM",
+      "Name": "P3",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:43 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
+      "BarID": "QLVN9E",
+      "Name": "3D Printing",
+      "TypeID": 1,
+      "LVN": 3,
+      "CVN": 0,
+      "CreatedDate": "06-Nov-23 11:29:51 AM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
+      "BarID": "WVT1WT",
+      "Name": "P1",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "14-Nov-23 4:53:51 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
+      "BarID": "U8WMIS",
+      "Name": "P2",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:24 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
+      "BarID": "N76WFM",
+      "Name": "P3",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:43 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
+      "BarID": "QLVN9E",
+      "Name": "3D Printing",
+      "TypeID": 1,
+      "LVN": 3,
+      "CVN": 0,
+      "CreatedDate": "06-Nov-23 11:29:51 AM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
+      "BarID": "WVT1WT",
+      "Name": "P1",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "14-Nov-23 4:53:51 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
+      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
+      "BarID": "U8WMIS",
+      "Name": "P2",
+      "TypeID": 1,
+      "LVN": 2,
+      "CVN": 0,
+      "CreatedDate": "17-Nov-23 2:37:24 PM",
+      "SyncStatus": "synced",
+      "Status": "Created",
+    }, {
       "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
       "BarID": "N76WFM",
       "Name": "P3",
@@ -426,19 +456,19 @@ document.addEventListener("DOMContentLoaded", function () {
       "OperationType": "Build"
     }
   ]
-  const itemsPerPage = 6;
+  const itemsPerPage = 4;
   let currentPage = 1;
   const projectList = document.getElementById("projectList");
 
   function createListItem(project) {
     let squareColor = '#1d4ed8';
-
     const listItem = document.createElement("li");
+
     listItem.classList.add("d-flex", "flex-column");
     listItem.innerHTML = `
       <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 text-center align-items-center">
         <div class="accordion-header text-center">
-          <span class="fas fa-plus main-body"></span>
+          <span class="fas fa-plus main-body" id='projecticon'></span>
           <i class="fa fa-square project" style="color: ${squareColor};"></i>
           <span class="border-bottom border-dark main-body">${project.BarID}</span>
         </div>
@@ -447,30 +477,30 @@ document.addEventListener("DOMContentLoaded", function () {
         <span class="project-status main-body">${project.Status}</span>
       </div>
       <div>
-      <ul class="subproject-list list-unstyled border-0 border" style="display:none">
-        ${project.Jobs.map(job => createJobListItem(job).outerHTML).join('')}
-      </ul>
+        <ul class="subproject-list list-unstyled border-0 border" style="display:none; padding:0px" id='jobTable'>
+          ${Jobs.map(job => createJobListItem(job).outerHTML).join('')}
+        </ul>
       </div>
     `;
-    const accordionHeader = listItem.querySelector('.accordion-header');
-    const arrowIcon = listItem.querySelector('.fa-plus');
+
+    const projectIcon = listItem.querySelector('#projecticon');
     const subprojectContainer = listItem.querySelector('.subproject-list');
-    accordionHeader.addEventListener('click', () => {
-      arrowIcon.classList.toggle('fa-plus');
-      arrowIcon.classList.toggle('fa-minus');
+    projectIcon.addEventListener('click', () => {
+      projectIcon.classList.toggle('fa-plus');
+      projectIcon.classList.toggle('fa-minus');
       subprojectContainer.classList.toggle('d-block');
     });
     return listItem;
   }
 
   function createJobListItem(job) {
-    let squareColor = getSquareColor(job.LVN);
+    let squareColor = '#a21caf';
     const listItem1 = document.createElement("li");
     listItem1.innerHTML = `
-      <div class="d-flex flex-column">
-        <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 accordion-header">
-          <div class="accordion-header d-flex justify-content-center">
-            <span class="fas fa-plus main-body"></span>
+      <div class="d-flex flex-column border-1 border">
+        <div class="d-flex justify-content-between p-3 gap-0 m-0 accordion-header1">
+          <div class="accordion-header gap-2 d-flex justify-content-center">
+            <span class="fas fa-plus main-body" id='projecticon'></span>
             <i class="fa fa-square project" style="color: ${squareColor};"></i>
             <span class="main-body border-bottom border-dark">${job.BarID}</span>
           </div>
@@ -480,25 +510,25 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div>
           <ul class="operation-list border-0 border" style="display:none">
-            ${job.Operations.map(operation => createOperationListItem(operation).outerHTML).join('')}
+            ${Operations.map(operation => createOperationListItem(operation).outerHTML).join('')}
           </ul>
         </div>
       </div>
     `;
-    const accordionHeader = listItem1.querySelector('.accordion-header');
-    const arrowIcon = accordionHeader.querySelector('.fas');
+    const projectIcon = listItem1.querySelector('#projecticon');
     const subprojectContainer = listItem1.querySelector('.operation-list');
-    accordionHeader.addEventListener('click', () => {
-      arrowIcon.classList.toggle('fa-plus');
-      arrowIcon.classList.toggle('fa-minus');
+    projectIcon.addEventListener('click', () => {
+      projectIcon.classList.toggle('fa-plus');
+      projectIcon.classList.toggle('fa-minus');
       subprojectContainer.classList.toggle('d-block');
     });
     return listItem1;
   }
 
   function createOperationListItem(operation) {
-    let squareColor = getSquareColor(operation.LVN);
+    let squareColor = '#4d7c0f';
     const listItem2 = document.createElement("li");
+
     listItem2.innerHTML = `
       <li class="list-group-item">
         <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0">
@@ -513,22 +543,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return listItem2;
   }
 
-  function getSquareColor(LVN) {
-    switch (LVN) {
-      case 1:
-        return "#1d4ed8";
-      case 2:
-        return "#a21caf";
-      case 3:
-        return "#4d7c0f";
-      default:
-        return "#fde047";
-    }
-  }
-
   function addProjectsToList(data) {
-    projectList.innerHTML = ""; // Clear existing content
-
+    projectList.innerHTML = "";
     data.forEach(project => {
       const listItem = createListItem(project);
       projectList.appendChild(listItem);
@@ -536,18 +552,112 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updatePagination() {
-    // Your pagination update logic here
+    const totalItems = projectsData2.length;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const paginationElement = document.getElementById('paginationProjects');
+    paginationElement.innerHTML = '';
+
+    function addPageLink(pageNumber) {
+      const li = document.createElement('li');
+      li.classList.add('page-item');
+
+      const a = document.createElement('a');
+      a.classList.add('page-link');
+      a.href = '#';
+      a.innerText = pageNumber;
+
+      if (pageNumber === currentPage) {
+        li.classList.add('active');
+        a.style.backgroundColor = '#007bff';
+        a.style.color = '#fff'
+      } else {
+        a.style.color = '#000'
+      }
+
+      a.addEventListener('click', () => {
+        currentPage = pageNumber;
+        initializePage();
+      });
+
+      li.appendChild(a);
+      paginationElement.appendChild(li);
+    }
+
+
+    function addNavigationButton(text, page, callback, isDisabled) {
+      const li = document.createElement('li');
+      li.classList.add('page-item');
+
+      if (isDisabled) {
+        li.classList.add('disabled');
+      }
+
+      const a = document.createElement('a');
+      a.classList.add('page-link', 'text-white');
+      a.href = '#';
+      a.innerHTML = text;
+      a.style.backgroundColor = isDisabled ? '#d6d6d6' : '#007bff';
+      a.style.cursor = isDisabled ? 'not-allowed' : 'pointer';
+
+      if (!isDisabled) {
+        a.addEventListener('click', () => {
+          callback();
+        });
+      }
+
+      li.appendChild(a);
+      paginationElement.appendChild(li);
+    }
+
+    // Add "First" button
+    addNavigationButton('&laquo;', 1, () => {
+      currentPage = 1;
+      initializePage();
+    }, currentPage === 1);
+
+    // Add "Previous" button
+    addNavigationButton('<', currentPage - 1, () => {
+      if (currentPage > 1) {
+        currentPage--;
+        initializePage();
+      }
+    }, currentPage === 1);
+
+    // Add page links
+    const maxVisiblePages = 3;
+    let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
+    let endPage = Math.min(startPage + maxVisiblePages - 1, totalPages);
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+    }
+    for (let i = startPage; i <= endPage; i++) {
+      addPageLink(i);
+    }
+
+    // Add "Next" button
+    addNavigationButton('>', currentPage + 1, () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        initializePage();
+      }
+    }, currentPage === totalPages);
+
+    // Add "Last" button
+    addNavigationButton('&raquo;', totalPages, () => {
+      currentPage = totalPages;
+      initializePage();
+    }, currentPage === totalPages);
   }
 
   function initializePage() {
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = Math.min(currentPage * itemsPerPage, projectsData.length);
-    addProjectsToList(projectsData.slice(startIndex, endIndex));
+    const endIndex = Math.min(currentPage * itemsPerPage, projectsData2.length);
+    addProjectsToList(projectsData2.slice(startIndex, endIndex));
     updatePagination();
   }
+
   initializePage();
 
-  ///dot design
   const operationsData = Operations
   const operationsList = document.getElementById("operationsList");
 
@@ -588,7 +698,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return operationElement;
   }
 
-  //timer design
   const startButton = document.getElementById('operationStatusStartButtons');
   const pauseResumeButton = document.getElementById('operationStatusPauseResumeButtons');
   const endButton = document.getElementById('operationEndButtons');
@@ -661,25 +770,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const jobDetailsContainer = document.getElementById('jobDetails');
 
   //first table data
-  const jobData = projectsData.map(e => e.Jobs[0]);
+  const jobData = Jobs[0];
   const jobElement = document.createElement('div');
   jobElement.classList.add('rowPop');
-
   jobElement.innerHTML = `
                 <div class="row mb-3">
                 <div class="col-md-6 mb-2">
                     <span class="text-sm font-weight-normalBold">Job Number:</span>
-                    <span class="text-sm font-weight-light JobData">${jobData[0].GUID}</span>
+                    <span class="text-sm font-weight-light JobData">${jobData.GUID}</span>
                 </div>
                 <div class="col-md-6 mb-2">
                     <span class="text-sm font-weight-normalBold">Part Number:</span>
-                    <span class="text-sm font-weight-light JobData">${jobData[0].JobPathNumber}</span>
+                    <span class="text-sm font-weight-light JobData">${jobData.JobPathNumber}</span>
                 </div>
               </div>
               <div class="row mb-3">
                 <div class="col-md-6 mb-2">
                     <span class="text-sm font-weight-normalBold">Customer:</span>
-                    <span class="text-sm font-weight-light JobData">${jobData[0].JobPathNumber}</span>
+                    <span class="text-sm font-weight-light JobData">${jobData.JobPathNumber}</span>
                 </div>
                 <div class="col-md-6 mb-2">
                     <span class="text-sm font-weight-normalBold">Drawing Number:</span>
