@@ -183,6 +183,7 @@
 .dashboard-tooltip {
   background-color: #007bff;
   max-width: 60px;
+  cursor: pointer;
 }
 
 .main-body {

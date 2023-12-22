@@ -1,210 +1,210 @@
 document.addEventListener("DOMContentLoaded", function () {
   const projectsData = [
     {
-      "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
-      "BarID": "QLVN9E",
-      "Name": "3D Printing",
-      "TypeID": 1,
-      "LVN": 3,
-      "CVN": 0,
-      "CreatedDate": "06-Nov-23 11:29:51 AM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
+      GUID: "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
+      BarID: "QLVN9E",
+      Name: "3D Printing",
+      TypeID: 1,
+      LVN: 3,
+      CVN: 0,
+      CreatedDate: "06-Nov-23 11:29:51 AM",
+      SyncStatus: "synced",
+      Status: "Created",
+      Jobs: [
         {
-          "GUID": "5f8a4127-22e3-4ae0-bee8-6d2a90aa93fc",
-          "BarID": "B0KEPO",
-          "Name": "3D Build",
-          "TypeID": 2,
-          "LVN": 3,
-          "CVN": 0,
-          "CreatedDate": "06-Nov-23 11:30:07 AM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 10,
-          "Operations": [
+          GUID: "5f8a4127-22e3-4ae0-bee8-6d2a90aa93fc",
+          BarID: "B0KEPO",
+          Name: "3D Build",
+          TypeID: 2,
+          LVN: 3,
+          CVN: 0,
+          CreatedDate: "06-Nov-23 11:30:07 AM",
+          SyncStatus: "synced",
+          Status: "Created",
+          JobPathNumber: "",
+          MaterialSpec: "",
+          Quantity: 10,
+          Operations: [
             {
-              "GUID": "590807be-8a4d-4a08-850f-47c5a5f6fc20",
-              "BarID": "2Y829T",
-              "Name": "Additive MFG",
-              "TypeID": 3,
-              "LVN": 8,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "Processed",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 10,
-              "BuildRecovery": 20,
-              "StartTime": "14-Nov-23 5:15:02 PM",
-              "EndTime": "14-Nov-23 5:16:23 PM",
-              "TimeSpent": "0:0:12",
-              "IsDone": true,
-              "InProgress": true,
-              "OperationType": "Build"
-            }
-          ]
-        }
-      ]
+              GUID: "590807be-8a4d-4a08-850f-47c5a5f6fc20",
+              BarID: "2Y829T",
+              Name: "Additive MFG",
+              TypeID: 3,
+              LVN: 8,
+              CVN: 0,
+              CreatedDate: "22-Nov-23 9:34:33 AM",
+              SyncStatus: "synced",
+              Status: "Processed",
+              Quantity: 0,
+              QuantityCompleted: 0,
+              QuantityRejected: 0,
+              HopperRecovery: 10,
+              BuildRecovery: 20,
+              StartTime: "14-Nov-23 5:15:02 PM",
+              EndTime: "14-Nov-23 5:16:23 PM",
+              TimeSpent: "0:0:12",
+              IsDone: true,
+              InProgress: true,
+              OperationType: "Build",
+            },
+          ],
+        },
+      ],
     },
     {
-      "GUID": "aff33340-7265-451b-9017-a0042f6cb66f",
-      "BarID": "WVT1WT",
-      "Name": "P1",
-      "TypeID": 1,
-      "LVN": 2,
-      "CVN": 0,
-      "CreatedDate": "14-Nov-23 4:53:51 PM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
+      GUID: "aff33340-7265-451b-9017-a0042f6cb66f",
+      BarID: "WVT1WT",
+      Name: "P1",
+      TypeID: 1,
+      LVN: 2,
+      CVN: 0,
+      CreatedDate: "14-Nov-23 4:53:51 PM",
+      SyncStatus: "synced",
+      Status: "Created",
+      Jobs: [
         {
-          "GUID": "b6788070-ce0e-4a87-a41d-f95dfd5fdf8b",
-          "BarID": "Y9D1OM",
-          "Name": "Job 1",
-          "TypeID": 2,
-          "LVN": 1,
-          "CVN": 0,
-          "CreatedDate": "14-Nov-23 5:18:11 PM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 0,
-          "Operations": [
+          GUID: "b6788070-ce0e-4a87-a41d-f95dfd5fdf8b",
+          BarID: "Y9D1OM",
+          Name: "Job 1",
+          TypeID: 2,
+          LVN: 1,
+          CVN: 0,
+          CreatedDate: "14-Nov-23 5:18:11 PM",
+          SyncStatus: "synced",
+          Status: "Created",
+          JobPathNumber: "",
+          MaterialSpec: "",
+          Quantity: 0,
+          Operations: [
             {
-              "GUID": "a2fd6630-a971-4f69-9659-0b19c4d7900f",
-              "BarID": "6AIOZ0",
-              "Name": "Issue Material",
-              "TypeID": 3,
-              "LVN": 10,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "WorkInProgress",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 0,
-              "BuildRecovery": 0,
-              "StartTime": "16-Nov-23 3:30:08 PM",
-              "EndTime": "14-Nov-23 5:18:28 PM",
-              "TimeSpent": "0:0:40",
-              "IsDone": false,
-              "InProgress": true,
-              "OperationType": "StockRecovery"
-            }
-          ]
-        }
-      ]
+              GUID: "a2fd6630-a971-4f69-9659-0b19c4d7900f",
+              BarID: "6AIOZ0",
+              Name: "Issue Material",
+              TypeID: 3,
+              LVN: 10,
+              CVN: 0,
+              CreatedDate: "22-Nov-23 9:34:33 AM",
+              SyncStatus: "synced",
+              Status: "WorkInProgress",
+              Quantity: 0,
+              QuantityCompleted: 0,
+              QuantityRejected: 0,
+              HopperRecovery: 0,
+              BuildRecovery: 0,
+              StartTime: "16-Nov-23 3:30:08 PM",
+              EndTime: "14-Nov-23 5:18:28 PM",
+              TimeSpent: "0:0:40",
+              IsDone: false,
+              InProgress: true,
+              OperationType: "StockRecovery",
+            },
+          ],
+        },
+      ],
     },
     {
-      "GUID": "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
-      "BarID": "U8WMIS",
-      "Name": "P2",
-      "TypeID": 1,
-      "LVN": 2,
-      "CVN": 0,
-      "CreatedDate": "17-Nov-23 2:37:24 PM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
+      GUID: "a6e71bcd-8204-484a-8157-3e4abed5bcb5",
+      BarID: "U8WMIS",
+      Name: "P2",
+      TypeID: 1,
+      LVN: 2,
+      CVN: 0,
+      CreatedDate: "17-Nov-23 2:37:24 PM",
+      SyncStatus: "synced",
+      Status: "Created",
+      Jobs: [
         {
-          "GUID": "999f2460-6617-4368-9785-49906e26f908",
-          "BarID": "7IY9EP",
-          "Name": "J2",
-          "TypeID": 2,
-          "LVN": 1,
-          "CVN": 0,
-          "CreatedDate": "17-Nov-23 2:47:41 PM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 0,
-          "Operations": [
+          GUID: "999f2460-6617-4368-9785-49906e26f908",
+          BarID: "7IY9EP",
+          Name: "J2",
+          TypeID: 2,
+          LVN: 1,
+          CVN: 0,
+          CreatedDate: "17-Nov-23 2:47:41 PM",
+          SyncStatus: "synced",
+          Status: "Created",
+          JobPathNumber: "",
+          MaterialSpec: "",
+          Quantity: 0,
+          Operations: [
             {
-              "GUID": "5a4f5631-ced3-4a45-9b68-83464a3d07df",
-              "BarID": "ZU7AK4",
-              "Name": "Issue Material",
-              "TypeID": 3,
-              "LVN": 1,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "Created",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 0,
-              "BuildRecovery": 0,
-              "StartTime": "17-Nov-23 2:47:49 PM",
-              "EndTime": "17-Nov-23 2:47:49 PM",
-              "TimeSpent": "0:0:0",
-              "IsDone": false,
-              "InProgress": false,
-              "OperationType": "StockRecovery"
-            }
-          ]
-        }
-      ]
+              GUID: "5a4f5631-ced3-4a45-9b68-83464a3d07df",
+              BarID: "ZU7AK4",
+              Name: "Issue Material",
+              TypeID: 3,
+              LVN: 1,
+              CVN: 0,
+              CreatedDate: "22-Nov-23 9:34:33 AM",
+              SyncStatus: "synced",
+              Status: "Created",
+              Quantity: 0,
+              QuantityCompleted: 0,
+              QuantityRejected: 0,
+              HopperRecovery: 0,
+              BuildRecovery: 0,
+              StartTime: "17-Nov-23 2:47:49 PM",
+              EndTime: "17-Nov-23 2:47:49 PM",
+              TimeSpent: "0:0:0",
+              IsDone: false,
+              InProgress: false,
+              OperationType: "StockRecovery",
+            },
+          ],
+        },
+      ],
     },
     {
-      "GUID": "ae3b52b4-5402-4637-95fd-477b6ef57de1",
-      "BarID": "N76WFM",
-      "Name": "P3",
-      "TypeID": 1,
-      "LVN": 2,
-      "CVN": 0,
-      "CreatedDate": "17-Nov-23 2:37:43 PM",
-      "SyncStatus": "synced",
-      "Status": "Created",
-      "Jobs": [
+      GUID: "ae3b52b4-5402-4637-95fd-477b6ef57de1",
+      BarID: "N76WFM",
+      Name: "P3",
+      TypeID: 1,
+      LVN: 2,
+      CVN: 0,
+      CreatedDate: "17-Nov-23 2:37:43 PM",
+      SyncStatus: "synced",
+      Status: "Created",
+      Jobs: [
         {
-          "GUID": "cfb13e1c-cda2-4d38-9d8d-bcd16676c9ec",
-          "BarID": "PL3DSC",
-          "Name": "Job 3",
-          "TypeID": 2,
-          "LVN": 1,
-          "CVN": 0,
-          "CreatedDate": "17-Nov-23 2:47:56 PM",
-          "SyncStatus": "synced",
-          "Status": "Created",
-          "JobPathNumber": "",
-          "MaterialSpec": "",
-          "Quantity": 0,
-          "Operations": [
+          GUID: "cfb13e1c-cda2-4d38-9d8d-bcd16676c9ec",
+          BarID: "PL3DSC",
+          Name: "Job 3",
+          TypeID: 2,
+          LVN: 1,
+          CVN: 0,
+          CreatedDate: "17-Nov-23 2:47:56 PM",
+          SyncStatus: "synced",
+          Status: "Created",
+          JobPathNumber: "",
+          MaterialSpec: "",
+          Quantity: 0,
+          Operations: [
             {
-              "GUID": "c8f870cf-48b9-4cf7-8e38-bf3b8eb9133e",
-              "BarID": "AV9XLW",
-              "Name": "Issue Material",
-              "TypeID": 3,
-              "LVN": 1,
-              "CVN": 0,
-              "CreatedDate": "22-Nov-23 9:34:33 AM",
-              "SyncStatus": "synced",
-              "Status": "Created",
-              "Quantity": 0,
-              "QuantityCompleted": 0,
-              "QuantityRejected": 0,
-              "HopperRecovery": 0,
-              "BuildRecovery": 0,
-              "StartTime": "17-Nov-23 2:47:56 PM",
-              "EndTime": "17-Nov-23 2:47:56 PM",
-              "TimeSpent": "0:0:0",
-              "IsDone": false,
-              "InProgress": false,
-              "OperationType": "StockRecovery"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+              GUID: "c8f870cf-48b9-4cf7-8e38-bf3b8eb9133e",
+              BarID: "AV9XLW",
+              Name: "Issue Material",
+              TypeID: 3,
+              LVN: 1,
+              CVN: 0,
+              CreatedDate: "22-Nov-23 9:34:33 AM",
+              SyncStatus: "synced",
+              Status: "Created",
+              Quantity: 0,
+              QuantityCompleted: 0,
+              QuantityRejected: 0,
+              HopperRecovery: 0,
+              BuildRecovery: 0,
+              StartTime: "17-Nov-23 2:47:56 PM",
+              EndTime: "17-Nov-23 2:47:56 PM",
+              TimeSpent: "0:0:0",
+              IsDone: false,
+              InProgress: false,
+              OperationType: "StockRecovery",
+            },
+          ],
+        },
+      ],
+    },
+  ];
   const itemsPerPage = 4;
   const tableBody = document.getElementById("tableBody");
   const prevPageButton = document.getElementById("prevPage");
@@ -213,7 +213,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateTable(startIndex) {
     tableBody.innerHTML = "";
 
-    for (let i = startIndex; i < startIndex + itemsPerPage && i < projectsData.length; i++) {
+    for (
+      let i = startIndex;
+      i < startIndex + itemsPerPage && i < projectsData.length;
+      i++
+    ) {
       const row = document.createElement("tr");
       row.classList.add("border-0");
       row.innerHTML = `
@@ -242,8 +246,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   updateTable(currentPage * itemsPerPage);
 
-
-
   const jsonData = [
     { category: "Projects", count: 5 },
     { category: "Jobs", count: 10 },
@@ -267,8 +269,8 @@ document.addEventListener("DOMContentLoaded", function () {
                   <div class="col-sm-3 col-md-3 col-lg-3 col-3">
                       <span class="fw-bold" id="count-${category}">${count}</span>
                   </div>
-                  <div class="col-sm-2 col-md-2 col-lg-2 col-2 dashboard-tooltip px-3 py-2 text-center rounded-3">
-                      <i class="fa fa-ellipsis-v toggle-popup text-white" data-popup-id="popup-${category}"></i>
+                  <div class="col-sm-2 col-md-2 col-lg-2 col-2 dashboard-tooltip toggle-popup px-3 py-2 text-center rounded-3" data-popup-id="popup-${category}">
+                      <i class="fa fa-ellipsis-v text-white toggle-popup" data-popup-id="popup-${category}"></i>
                   </div>
               </div>
           </div>
@@ -291,20 +293,20 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 
-  document.addEventListener('click', function (event) {
+  document.addEventListener("click", function (event) {
     const target = event.target;
-    document.querySelectorAll('.popup').forEach(popup => {
+    document.querySelectorAll(".popup").forEach((popup) => {
       if (popup.id !== `popup-${target.dataset.category}`) {
-        popup.style.display = 'none';
+        popup.style.display = "none";
       }
     });
-    if (target.classList.contains('toggle-popup')) {
-      const popupId = target.getAttribute('data-popup-id');
+    if (target.classList.contains("toggle-popup")) {
+      const popupId = target.getAttribute("data-popup-id");
       const popup = document.getElementById(popupId);
-      popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+      popup.style.display = popup.style.display === "none" ? "block" : "none";
     }
 
-    if (target.classList.contains('list-group-item')) {
+    if (target.classList.contains("list-group-item")) {
       const category = target.dataset.category;
       const countId = target.dataset.countId;
       const countSpan = document.getElementById(countId);
@@ -317,8 +319,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function updateDashboard(jsonData) {
-    const dashboardCards = document.getElementById('dashboardCards');
-    dashboardCards.innerHTML = ''; // Clear existing content
+    const dashboardCards = document.getElementById("dashboardCards");
+    dashboardCards.innerHTML = ""; // Clear existing content
 
     jsonData.forEach(({ category, count }) => {
       const card = createCard(category, count);
@@ -326,8 +328,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   function updateDashboard2(jsonData) {
-    const dashboardCards = document.getElementById('dashboardCards2');
-    dashboardCards.innerHTML = ''; // Clear existing content
+    const dashboardCards = document.getElementById("dashboardCards2");
+    dashboardCards.innerHTML = ""; // Clear existing content
 
     jsonData.forEach(({ category, count }) => {
       const card = createCard(category, count);
@@ -335,32 +337,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   updateDashboard(jsonData);
-  updateDashboard2(initialData)
-  document.addEventListener('click', function (event) {
+  updateDashboard2(initialData);
+  document.addEventListener("click", function (event) {
     const target = event.target;
-    if (target.classList.contains('active-popup')) {
+    if (target.classList.contains("active-popup")) {
       const popupId = target.dataset.popupId;
       const popup = document.getElementById(popupId);
-      popup.style.display = 'none';
+      popup.style.display = "none";
     }
   });
 
-
-
   const secondJson = [
-    { project: 'Project 1', members: 'Team 1', promisedDate: '2023-01-15', completion: '30%' },
-    { project: 'Project 2', members: 'Team 2', promisedDate: '2023-02-01', completion: '50%' },
-    { project: 'Project 3', members: 'Team 3', promisedDate: '2023-03-10', completion: '80%' },
-    { project: 'Project 4', members: 'Team 4', promisedDate: '2023-04-05', completion: '100%' },
-    { project: 'Project 5', members: 'Team 5', promisedDate: '2023-05-20', completion: '100%' },
-    { project: 'Project 6', members: 'Team 6', promisedDate: '2023-06-15', completion: '100%' },
+    {
+      project: "Project 1",
+      members: "Team 1",
+      promisedDate: "2023-01-15",
+      completion: "30%",
+    },
+    {
+      project: "Project 2",
+      members: "Team 2",
+      promisedDate: "2023-02-01",
+      completion: "50%",
+    },
+    {
+      project: "Project 3",
+      members: "Team 3",
+      promisedDate: "2023-03-10",
+      completion: "80%",
+    },
+    {
+      project: "Project 4",
+      members: "Team 4",
+      promisedDate: "2023-04-05",
+      completion: "100%",
+    },
+    {
+      project: "Project 5",
+      members: "Team 5",
+      promisedDate: "2023-05-20",
+      completion: "100%",
+    },
+    {
+      project: "Project 6",
+      members: "Team 6",
+      promisedDate: "2023-06-15",
+      completion: "100%",
+    },
   ];
 
-  const tableBody2 = document.getElementById('tableBody1');
-  const tableBody1count = document.getElementById('tableBody1count');
+  const tableBody2 = document.getElementById("tableBody1");
+  const tableBody1count = document.getElementById("tableBody1count");
   let completedCount = 0;
-  secondJson.forEach(entry => {
-    const row = document.createElement('tr');
+  secondJson.forEach((entry) => {
+    const row = document.createElement("tr");
     row.innerHTML = `
         <td class='text-center'>${entry.project}</td>
         <td class='text-center'>${entry.members}</td>
@@ -374,52 +404,52 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   tableBody1count.textContent = completedCount;
 
-
-
-
-
   // Set up the SVG container dimensions
   const data = [
     { month: "January", value: 10 },
     { month: "February", value: 15 },
     { month: "March", value: 8 },
     { month: "April", value: 12 },
-    { month: "May", value: 20 }
+    { month: "May", value: 20 },
   ];
 
-  const myChart = echarts.init(document.getElementById('barChart'));
+  const myChart = echarts.init(document.getElementById("barChart"));
 
   const option = {
     xAxis: {
-      type: 'category',
-      data: data.map(d => d.month),
-      splitLine: {  // Add split lines on the x-axis
-        show: true
-      }
+      type: "category",
+      data: data.map((d) => d.month),
+      splitLine: {
+        // Add split lines on the x-axis
+        show: true,
+      },
     },
     yAxis: {
-      type: 'value',
-      splitLine: {  // Add split lines on the y-axis
-        show: true
-      }
+      type: "value",
+      splitLine: {
+        // Add split lines on the y-axis
+        show: true,
+      },
     },
     legend: {
-      data: ['Project Numbers']
+      data: ["Project Numbers"],
     },
-    series: [{
-      type: 'bar',
-      name: 'Project Numbers',
-      id: 'sales',
-      data: data.map(d => d.value),
-      itemStyle: {
-        color: '#007bff',
+    series: [
+      {
+        type: "bar",
+        name: "Project Numbers",
+        id: "sales",
+        data: data.map((d) => d.value),
+        itemStyle: {
+          color: "#007bff",
+        },
+        universalTransition: {
+          enabled: true,
+          divideShape: "clone",
+        },
       },
-      universalTransition: {
-        enabled: true,
-        divideShape: 'clone'
-      }
-    }]
+    ],
   };
 
   myChart.setOption(option);
-})
+});
