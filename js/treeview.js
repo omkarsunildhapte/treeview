@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
       root.classList.remove("dark-mode");
     }
   });
-
-
   const projectsData2 = [
     {
       "GUID": "bcc8c279-2a4f-481f-ac8e-79dc4207acba",
@@ -459,23 +457,55 @@ document.addEventListener("DOMContentLoaded", function () {
   const itemsPerPage = 4;
   let currentPage = 1;
   const projectList = document.getElementById("projectList");
+  const operationsData = Operations
+  const operationsList = document.getElementById("operationsList");
+  const startButton = document.getElementById('operationStatusStartButtons');
+  const pauseResumeButton = document.getElementById('operationStatusPauseResumeButtons');
+  const endButton = document.getElementById('operationEndButtons');
+  const timerData = document.getElementById('operationTimerData');
+  document.getElementById('faPlay').classList.add('d-block');
+  let timerInterval;
+  let timerSeconds = 0;
+  startButton.addEventListener('click', startTimer);
+  pauseResumeButton.addEventListener('click', pauseResumeTimer);
+  endButton.addEventListener('click', endTimer);
+  const accordionIcon = document.querySelector('.accordion-icon');
+  const operationDetailsDataDiv = document.getElementById('operationDetailsDataDiv');
+  const accordionIconObservations = document.querySelector('#accordionObservationsButton .accordion-icon');
+  const observationsDataDiv = document.getElementById('observationsDataDiv');
+  const jobDetailsContainer = document.getElementById('jobDetails');
+  const jobData = Jobs[0];
+  const jobElement = document.createElement('div');
+  jobElement.classList.add('rowPop');
+  const operationDetails = {
+    ID: "123",
+    quantityCompleted: "456",
+    quantityRejected: "789",
+    machine: "MachineXYZ",
+    machineTechnology: "TechnologyABC",
+    allocatedStockID: "StockID123",
+    allocatedStockQuantity: "100",
+    hopperRecovery: "30",
+    buildRecovery: "40"
+  };
 
   function createListItem(project) {
     let squareColor = '#1d4ed8';
     const listItem = document.createElement("li");
 
-    listItem.classList.add("d-flex", "flex-column");
+    listItem.classList.add("d-flex", "flex-column", "justify-content-between");
     listItem.innerHTML = `
-      <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 text-center align-items-center">
-        <div class="accordion-header text-center">
-          <span class="fas fa-plus main-body" id='projecticon'></span>
-          <i class="fa fa-square project" style="color: ${squareColor};"></i>
-          <span class="border-bottom border-dark main-body">${project.BarID}</span>
-        </div>
-        <span class="project-name main-body">${project.Name}</span>
-        <span class="project-date main-body">${project.CreatedDate}</span>
-        <span class="project-status main-body">${project.Status}</span>
-      </div>
+    <div class="d-flex justify-content-between border-1 border p-3 gap-0 m-0 text-center align-items-center px-6">
+    <div class="accordion-header text-center">
+      <span class="fas fa-plus main-body" id='projecticon'></span>
+      <i class="fa fa-square project" style="color: ${squareColor};"></i>
+      <span class="border-bottom border-dark main-body">${project.BarID
+      }</span>
+    </div>
+    <span class="project-name main-body">${project.Name}</span>
+    <span class="project-date main-body">${project.CreatedDate}</span>
+    <span class="project-status main-body">${project.Status}</span>
+  </div>
       <div>
         <ul class="subproject-list list-unstyled border-0 border" style="display:none; padding:0px" id='jobTable'>
           ${Jobs.map(job => createJobListItem(job).outerHTML).join('')}
@@ -487,6 +517,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const subprojectContainer = listItem.querySelector('.subproject-list');
     projectIcon.addEventListener('click', () => {
       projectIcon.classList.toggle('fa-plus');
+      debugger
       projectIcon.classList.toggle('fa-minus');
       subprojectContainer.classList.toggle('d-block');
     });
@@ -497,17 +528,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let squareColor = '#a21caf';
     const listItem1 = document.createElement("li");
     listItem1.innerHTML = `
-      <div class="d-flex flex-column border-1 border">
-        <div class="d-flex justify-content-between p-3 gap-0 m-0 accordion-header1">
-          <div class="accordion-header gap-2 d-flex justify-content-center">
-            <span class="fas fa-plus main-body" id='projecticon'></span>
-            <i class="fa fa-square project" style="color: ${squareColor};"></i>
-            <span class="main-body border-bottom border-dark">${job.BarID}</span>
-          </div>
-          <span class="text-center job-name main-body">${job.Name}</span>
-          <span class="text-center job-date main-body">${job.CreatedDate}</span>
-          <span class="text-center job-status main-body">${job.Status}</span>
-        </div>
+    <div class="d-flex flex-column border-1 border px-7">
+    <div class="d-flex justify-content-between p-3 gap-0 m-0 accordion-header1">
+      <div class="accordion-header gap-2 d-flex justify-content-center">
+        <span class="fas fa-plus main-body" id='projecticon'></span>
+        <i class="fa fa-square project" style="color: ${squareColor};"></i>
+        <span class="main-body border-bottom border-dark">${job.BarID
+      }</span>
+      </div>
+      <span class="text-center job-name main-body">${job.Name}</span>
+      <span class="text-center job-date main-body">${job.CreatedDate}</span>
+      <span class="text-center job-status main-body">${job.Status}</span>
+    </div>
         <div>
           <ul class="operation-list border-0 border" style="display:none">
             ${Operations.map(operation => createOperationListItem(operation).outerHTML).join('')}
@@ -656,11 +688,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePagination();
   }
 
-  initializePage();
-
-  const operationsData = Operations
-  const operationsList = document.getElementById("operationsList");
-
   operationsData.forEach((operation, index) => {
     const operationUI = createOperationUI(operation, index + 1);
     operationsList.appendChild(operationUI);
@@ -677,34 +704,22 @@ document.addEventListener("DOMContentLoaded", function () {
     dotShow.innerHTML = dotValue;
 
     listItem.innerHTML = `
-              <p>${operation.Name}</p>
-              <p>Starting Date: ${operation.StartTime}</p>
+              <p class='fw-bold m-0'>${operation.Name}</p>
+              <p class='m-0'>Starting Date: ${operation.StartTime}</p>
               <p>End Time: ${operation.EndTime}</p>
           `;
-
     lineshow.appendChild(dotShow);
     operationElement.appendChild(lineshow);
     operationElement.appendChild(listItem);
-
     const line = document.createElement('div');
     line.classList.add('line');
     lineshow.appendChild(line);
-
     const dotHeight = dotShow.clientHeight / 2;
     const listItemHeight = listItem.clientHeight;
     const lineTop = dotHeight + listItemHeight / 2;
     line.style.top = lineTop + 'px';
-
     return operationElement;
   }
-
-  const startButton = document.getElementById('operationStatusStartButtons');
-  const pauseResumeButton = document.getElementById('operationStatusPauseResumeButtons');
-  const endButton = document.getElementById('operationEndButtons');
-  const timerData = document.getElementById('operationTimerData');
-  document.getElementById('faPlay').classList.add('d-block');
-  let timerInterval;
-  let timerSeconds = 0;
 
   function updateTimer() {
     const hours = Math.floor(timerSeconds / 3600);
@@ -749,30 +764,14 @@ document.addEventListener("DOMContentLoaded", function () {
     pauseResumeButton.style.display = 'none';
     endButton.disabled = true;
   }
-
-  startButton.addEventListener('click', startTimer);
-  pauseResumeButton.addEventListener('click', pauseResumeTimer);
-  endButton.addEventListener('click', endTimer);
-
-  ///according 1
-  const accordionIcon = document.querySelector('.accordion-icon');
-  const operationDetailsDataDiv = document.getElementById('operationDetailsDataDiv');
-
   accordionIcon.addEventListener('click', function () {
     operationDetailsDataDiv.classList.toggle('d-block');
   });
-  const accordionIconObservations = document.querySelector('#accordionObservationsButton .accordion-icon');
-  const observationsDataDiv = document.getElementById('observationsDataDiv');
 
   accordionIconObservations.addEventListener('click', function () {
     observationsDataDiv.classList.toggle('d-block');
   });
-  const jobDetailsContainer = document.getElementById('jobDetails');
 
-  //first table data
-  const jobData = Jobs[0];
-  const jobElement = document.createElement('div');
-  jobElement.classList.add('rowPop');
   jobElement.innerHTML = `
                 <div class="row mb-3">
                 <div class="col-md-6 mb-2">
@@ -807,51 +806,17 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   jobDetailsContainer.appendChild(jobElement);
 
-
-  const operationDetails = {
-    ID: "123",
-    quantityCompleted: "456",
-    quantityRejected: "789",
-    machine: "MachineXYZ",
-    machineTechnology: "TechnologyABC",
-    allocatedStockID: "StockID123",
-    allocatedStockQuantity: "100",
-    hopperRecovery: "30",
-    buildRecovery: "40"
-  };
-
   function setOperationDetails(data) {
-    // Update ID
     document.querySelector('#operationDetailsDataDiv .col-3:nth-child(2) .operationDetailsData').textContent = data.ID;
-
-    // Update Quantity Completed
     document.querySelector('#operationDetailsDataDiv .col-3:nth-child(4) .operationDetailsData').textContent = data.quantityCompleted;
-
-    // Update Quantity Rejected
     document.querySelector('#operationDetailsDataDiv .col-3:nth-child(6) .operationDetailsData').textContent = data.quantityRejected;
-
-    // Update Machine
     document.querySelector('#operationDetailsDataDiv .col-3:nth-child(8) .operationDetailsData').textContent = data.machine;
-
-    // Update Machine Technology
     document.querySelector('#operationDetailsDataDiv .col-3:nth-child(10) .operationDetailsData').textContent = data.machineTechnology;
-
-    // Update Allocated Stock ID
     document.querySelector('#operationDetailsDataDiv .col-3:nth-child(12) .operationDetailsData').textContent = data.allocatedStockID;
-
-    // Update Allocated Stock Quantity
     document.querySelector('#operationDetailsDataDiv .col-3:nth-child(14) .operationDetailsData').textContent = data.allocatedStockQuantity;
-
-    // Update Hopper Recovery
     document.querySelector('#operationDetailsDataDiv #hopperRecoveryInput').value = data.hopperRecovery;
-
-    // Update Build Recovery
     document.querySelector('#operationDetailsDataDiv #buildRecoveryInput').value = data.buildRecovery;
   }
-
-  setOperationDetails(operationDetails);
-
-
 
   document.getElementById("observationsDetailSave").addEventListener("click", function () {
     const nameValue = document.getElementById("observationNameInput").value;
@@ -868,7 +833,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const treeValues = getTreeValues();
     console.log("Tree Values:", treeValues);
   });
+
   function getTreeValues() {
     return [];
   }
+
+  initializePage();
+  setOperationDetails(operationDetails);
 });
