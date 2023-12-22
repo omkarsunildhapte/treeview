@@ -221,9 +221,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const row = document.createElement("tr");
       row.classList.add("border-0");
       row.innerHTML = `
-        <td class="border-0 text-center" style="overflow-x: auto; max-width: 150px;">${projectsData[i].Name}</td>
+        <td class="border-0 text-center">${projectsData[i].Name}</td>
         <td class="border-0 text-center">${projectsData[i].Status}</td>
-        <td class="border-0 text-center"><span class="barcode">${projectsData[i].BarID}</span></td>
+        <td class="border-0 text-center" style="overflow-x: auto;width: 300px;"><span class="barcode">${projectsData[i].BarID}</span></td>
       `;
       tableBody.appendChild(row);
     }
@@ -260,13 +260,13 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
   function createCard(category, count) {
     return `
-      <div style="max-width: 360px;" class="card col-lg-3 col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-2 m-0">
+      <div style="max-width: 390px;" class="card col-lg-3 col-xl-3 col-xxl-3 col-sm-12 col-12 col-md-3 mb-2 m-0">
           <div class="card-body m-0 p-0 py-3">
-              <div class="row align-items-center">
+              <div class="row align-items-center justify-content-center">
                   <div class="col-sm-6 col-md-6 col-6 col-lg-6">
                       <span class="fw-bold text-nowrap">${category}</span>
                   </div>
-                  <div class="col-sm-3 col-md-3 col-lg-3 col-3">
+                  <div class="col-sm-3 col-md-3 col-lg-3 col-3 text-end pe-4">
                       <span class="fw-bold" id="count-${category}">${count}</span>
                   </div>
                   <div class="col-sm-2 col-md-2 col-lg-2 col-2 dashboard-tooltip toggle-popup px-3 py-2 text-center rounded-3" data-popup-id="popup-${category}">
