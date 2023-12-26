@@ -114,19 +114,17 @@
         <div class="row">
             <div class="card col" style="overflow-x:auto;">
                 <div class="card-body">
-                    <table class="table table-bordered table-hover" id="projectTable">
-                        <thead class="thead-dark">
-                            <tr class="text-center">
-                                <th scope="col" class="main-body col-md-2">Id</th>
-                                <th scope="col" class="main-body col-md-3">Name</th>
-                                <th scope="col" class="main-body col-md-3">Created Date</th>
-                                <th scope="col" class="main-body col-md-2">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-body">
-                            <!-- Add rows dynamically using JavaScript -->
-                        </tbody>
-                    </table>
+                    <div class="table-container">
+                        <ul class="row list-unstyled py-3 border border-1 m-0 text-center">
+                            <li class="col-3 col-md-2">Id</li>
+                            <li class="col-3 col-md-3">Name</li>
+                            <li class="col-3 col-md-3">Created Date</li>
+                            <li class="col-3 col-md-2">Status</li>
+                        </ul>
+                        <ul class="row list-unstyled pb-3 p-0 border border-1 m-0 text-center overflow-auto"
+                            id="projectList" style="height: 350px">
+                        </ul>
+                    </div>
                     <nav class="mt-4 d-flex justify-content-center align-items-center">
                         <ul class="pagination" id="paginationProjects"></ul>
                     </nav>
